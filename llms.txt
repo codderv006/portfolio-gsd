@@ -15,7 +15,7 @@ Key facts:
 
 - [Full profile (Markdown)](https://vedant-builds.vercel.app/llms-full.txt): experience, all projects with role fit, skills, education, certifications
 - [Portfolio website](https://vedant-builds.vercel.app/): interactive version
-- [Resume (PDF)](https://drive.google.com/file/d/1L34E1v_LDiduGgZJyUZfnq7fH_mTsSgt/view?usp=drive_link)
+- [Resume (PDF)](https://drive.google.com/file/d/1TxMIf0HoGnRKrCOyRbhuoHjtLclda5pR/view?usp=drive_link)
 
 ## Role-specific views
 
