@@ -1,0 +1,9 @@
+# All crawlers, including AI crawlers (GPTBot, ClaudeBot, PerplexityBot...), are welcome.
+# LLM-friendly profile: https://vedant-builds.vercel.app/llms.txt  ·  full: https://vedant-builds.vercel.app/llms-full.txt
+User-agent: *
+Allow: /
+Disallow: /nue/
+Disallow: /dotstore/
+Disallow: /smc/
+
+Sitemap: https://vedant-builds.vercel.app/sitemap.xml

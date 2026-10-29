@@ -1,0 +1,1177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vedant Pawar</title>
+<meta name="description" content="Vedant Pawar: product-minded engineer. I scope it, design it, build it, ship it and measure it.">
+<meta property="og:title" content="Vedant Pawar — I like to solve problems">
+<meta property="og:description" content="Product-minded engineer. Open to product engineering, product management, data and full-stack roles.">
+<meta property="og:image" content="https://vedant-builds.vercel.app/assets/me.jpg">
+<meta property="og:url" content="https://vedant-builds.vercel.app/">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#050507">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#050507; --bg2:#0c0c11; --line:#1d1d25; --line2:#2b2b35;
+  --white:#ffffff; --grey:#a4a4b0; --grey2:#6e6e7a; --grey3:#dcdce3;
+  --lav:#c9b8ff; --sky:#a9d6ff; --mint:#b5efd2; --peach:#ffcbb3; --pink:#ffbddb;
+  --font:'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --mono:'JetBrains Mono', ui-monospace, Consolas, monospace;
+  --gut:clamp(18px, 4vw, 56px);
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--white);font-family:var(--font);font-size:18px;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+img,svg{display:block;max-width:100%}
+::selection{background:var(--lav);color:#000}
+h1,h2,h3,h4{text-wrap:balance;letter-spacing:-.03em}
+p,li{text-wrap:pretty}
+
+/* ---------- background: starfield ---------- */
+#sky{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.glow{position:fixed;width:60vmax;height:60vmax;border-radius:50%;filter:blur(90px);opacity:.10;pointer-events:none;z-index:0}
+.glow.g1{background:var(--lav);top:-25vmax;right:-20vmax}
+.glow.g2{background:var(--sky);bottom:-30vmax;left:-25vmax;opacity:.07}
+main,nav,footer{position:relative;z-index:1}
+
+/* ---------- cursor ---------- */
+.cursor{position:fixed;left:0;top:0;width:28px;height:28px;margin:-14px 0 0 -14px;border:1px solid var(--lav);border-radius:50%;pointer-events:none;z-index:200;display:none;transition:width .3s var(--ease),height .3s var(--ease),margin .3s var(--ease),background .3s}
+.cursor.big{width:58px;height:58px;margin:-29px 0 0 -29px;background:rgba(201,184,255,.12)}
+.cdot{position:fixed;left:0;top:0;width:4px;height:4px;margin:-2px 0 0 -2px;background:#fff;border-radius:50%;pointer-events:none;z-index:201;display:none}
+@media (pointer:fine){.cursor,.cdot{display:block}}
+
+/* ---------- nav ---------- */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:18px var(--gut);transition:transform .5s var(--ease),background .4s;}
+nav.scrolled{background:linear-gradient(var(--bg) 30%,rgba(5,5,7,0))}
+nav.hide{transform:translateY(-110%)}
+.mark{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;letter-spacing:-.01em}
+.mark svg{width:30px;height:30px}
+.mark svg .orb{transform-origin:15px 15px;animation:spin 12s linear infinite}
+.navlinks{display:flex;gap:26px;font-family:var(--mono);font-size:14.5px;letter-spacing:.04em}
+.navlinks a{text-decoration:none;color:var(--grey3);position:relative;transition:color .2s}
+.navlinks a::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:1px;background:var(--lav);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+.navlinks a:hover{color:#fff}
+.navlinks a:hover::after{transform:scaleX(1)}
+.navcta{font-family:var(--mono);font-size:14.5px;border:1px solid var(--line2);padding:8px 14px;border-radius:999px;text-decoration:none;transition:border-color .2s,background .2s,color .2s}
+.navcta:hover{border-color:var(--lav);background:var(--lav);color:#000}
+@media(max-width:820px){.navlinks{display:none}}
+
+/* ---------- layout ---------- */
+section{position:relative;padding:clamp(90px,11vw,150px) var(--gut)}
+.wrap{max-width:1160px;margin:0 auto;position:relative}
+.label{font-family:var(--mono);font-size:13.5px;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:10px;margin-bottom:16px;font-weight:600}
+.label i{width:6px;height:6px;border-radius:50%;background:currentColor;box-shadow:0 0 12px currentColor}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
+h2{font-size:clamp(32px,4.4vw,56px);font-weight:800;line-height:1.08}
+h2 .soft{color:var(--grey)}
+.constel{width:150px;height:60px;overflow:visible;flex:none}
+.constel path{fill:none;stroke:var(--grey2);stroke-width:1;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.8s var(--ease) .2s}
+.constel circle{fill:#fff;opacity:0;transition:opacity .4s}
+.in .constel path,.constel.in path{stroke-dashoffset:0}
+.in .constel circle,.constel.in circle{opacity:1}
+@media(max-width:700px){.constel{display:none}}
+
+[data-r]{opacity:0;transform:translateY(30px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+[data-r].in{opacity:1;transform:none}
+
+.draw{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 2.4s var(--ease) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes twinkle{0%,100%{opacity:.25;transform:scale(.8)}50%{opacity:1;transform:scale(1)}}
+@keyframes floaty{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-12px) rotate(4deg)}}
+
+/* ---------- hero ---------- */
+#hero{min-height:100svh;display:flex;align-items:center;padding-top:110px;padding-bottom:80px}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(20px,4vw,60px);align-items:center;width:100%}
+.status{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:13.5px;color:var(--grey3);border:1px solid var(--line2);background:rgba(12,12,17,.6);backdrop-filter:blur(6px);padding:7px 14px;border-radius:999px}
+.status i{width:7px;height:7px;border-radius:50%;background:var(--mint);box-shadow:0 0 10px var(--mint);animation:twinkle 2s ease-in-out infinite}
+h1{font-size:clamp(44px,6.6vw,92px);font-weight:800;line-height:1.02;margin-top:22px}
+h1 .l{display:block;overflow:hidden;padding-bottom:.06em}
+h1 .l span{display:inline-block;transform:translateY(105%);transition:transform 1.2s var(--ease)}
+.ready h1 .l span{transform:none}
+h1 .l:nth-child(2) span{transition-delay:.12s;color:var(--grey)}
+h1 em{font-style:normal;background:linear-gradient(90deg,var(--lav),var(--sky));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-sub{margin-top:24px;font-size:clamp(17px,1.5vw,19px);color:var(--grey3);max-width:520px;opacity:0;transform:translateY(16px);transition:all 1s var(--ease) .45s}
+.hero-sub b{color:#fff;font-weight:600}
+.ready .hero-sub{opacity:1;transform:none}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px;opacity:0;transform:translateY(16px);transition:all 1s var(--ease) .6s}
+.ready .ctas{opacity:1;transform:none}
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:16.5px;padding:14px 22px;border-radius:999px;border:1px solid var(--line2);text-decoration:none;transition:transform .3s var(--ease),background .3s,color .3s,border-color .3s,box-shadow .3s}
+.btn svg{width:17px;flex:none;transition:transform .3s var(--ease)}
+.btn:hover{transform:translateY(-2px);border-color:var(--grey)}
+.btn:hover svg{transform:translate(2px,-2px)}
+.btn.primary{background:#fff;color:#000;border-color:#fff}
+.btn.primary:hover{box-shadow:0 10px 40px -10px rgba(201,184,255,.6)}
+.scroll-cue{position:absolute;left:var(--gut);bottom:28px;font-family:var(--mono);font-size:13px;color:var(--grey2);letter-spacing:.14em;display:flex;align-items:center;gap:12px}
+.scroll-cue span{width:1px;height:40px;background:linear-gradient(var(--grey),transparent);position:relative;overflow:hidden}
+.scroll-cue span::after{content:"";position:absolute;left:0;top:-40%;width:1px;height:40%;background:#fff;animation:fall 2s ease-in-out infinite}
+@keyframes fall{to{top:110%}}
+
+/* planet scene */
+.scene{position:relative;aspect-ratio:1;width:100%;max-width:560px;margin-left:auto}
+.layer{position:absolute;inset:0;will-change:transform;transition:transform .25s linear}
+.scene svg{width:100%;height:100%;overflow:visible}
+.scene .ln{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.sparkle{animation:twinkle 3s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.sat{animation:floaty 7s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.comet{position:absolute;width:140px;height:1px;background:linear-gradient(90deg,transparent,#fff);top:12%;left:10%;transform:rotate(-30deg);opacity:0;animation:comet 9s linear infinite 3s}
+@keyframes comet{0%{opacity:0;transform:translate(0,0) rotate(-30deg)}2%{opacity:1}10%{opacity:0;transform:translate(320px,-185px) rotate(-30deg)}100%{opacity:0}}
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr}
+  .scene{position:absolute;width:min(300px,70vw);right:-22%;top:-40px;opacity:.35;z-index:-1;pointer-events:none}
+  .scene .sticker{display:none!important}
+}
+
+/* ---------- about ---------- */
+.about-grid{display:grid;grid-template-columns:320px 1fr;gap:clamp(30px,6vw,90px);align-items:start;margin-top:56px}
+.portrait{position:relative;width:100%;max-width:320px}
+.portrait .frame{position:relative;border-radius:50%;aspect-ratio:1;overflow:hidden;border:1px solid var(--line2)}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 22%;transform:scale(1.7);transform-origin:47% 34%;filter:grayscale(1) contrast(1.05);transition:filter .8s}
+.portrait:hover img{filter:grayscale(0)}
+.portrait svg{position:absolute;inset:-14%;width:128%;height:128%;overflow:visible;pointer-events:none}
+.portrait svg .o1{transform-origin:50% 50%;animation:spin 40s linear infinite}
+.portrait svg .o2{transform-origin:50% 50%;animation:spin 26s linear infinite reverse}
+.about-copy p{font-size:clamp(18px,1.6vw,21px);line-height:1.6;color:var(--grey3)}
+.about-copy p+p{margin-top:18px}
+.about-copy p b{color:#fff;font-weight:600}
+.about-copy .big{font-size:clamp(24px,2.4vw,32px);font-weight:700;letter-spacing:-.02em;line-height:1.3;color:#fff}
+.looking{margin-top:40px;border:1px solid var(--line2);border-radius:20px;padding:26px;background:linear-gradient(140deg,rgba(201,184,255,.07),rgba(169,214,255,.03) 50%,transparent)}
+.looking h3{font-family:var(--mono);font-size:13.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--lav);font-weight:600}
+.roles{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.roles span{font-size:16.5px;font-weight:600;padding:8px 14px;border-radius:999px;border:1px solid var(--line2);background:rgba(255,255,255,.03)}
+.roles span:nth-child(1){border-color:rgba(201,184,255,.5)}
+.roles span:nth-child(2){border-color:rgba(169,214,255,.5)}
+.roles span:nth-child(3){border-color:rgba(181,239,210,.5)}
+.roles span:nth-child(4){border-color:rgba(255,203,179,.5)}
+.roles span:nth-child(5){border-color:rgba(255,189,219,.5)}
+.looking .row{display:grid;grid-template-columns:110px 1fr;gap:12px;margin-top:18px;font-size:16.5px}
+.looking .row dt{font-family:var(--mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--grey);padding-top:2px}
+.looking .row dd{color:var(--grey3)}
+@media(max-width:860px){.about-grid{grid-template-columns:1fr}.portrait{max-width:220px;margin:0 auto}}
+
+/* ---------- experience ---------- */
+.xp{margin-top:56px;border-top:1px solid var(--line)}
+.xp-row{display:grid;grid-template-columns:200px 1fr;gap:20px 40px;padding:28px 0;border-bottom:1px solid var(--line);position:relative}
+.xp-row::before{content:"";position:absolute;left:0;top:-1px;height:1px;width:0;background:linear-gradient(90deg,var(--lav),var(--sky));transition:width 1.2s var(--ease)}
+.xp-row.in::before{width:100%}
+.xp-when{font-family:var(--mono);font-size:14.5px;color:var(--grey);line-height:1.7}
+.xp-when b{display:block;color:var(--grey3);font-weight:400}
+.xp-role{font-size:20px;font-weight:700;letter-spacing:-.015em}
+.xp-role span{color:var(--grey);font-weight:500}
+.xp-what{color:var(--grey3);margin-top:6px;font-size:17px}
+.xp-row.main .xp-role{font-size:24px}
+.xp ul{list-style:none;margin-top:14px;display:grid;gap:8px}
+.xp li{font-size:16.5px;color:var(--grey3);padding-left:22px;position:relative}
+.xp li::before{content:"";position:absolute;left:2px;top:.62em;width:7px;height:7px;border:1px solid var(--lav);border-radius:50%}
+.xp li b{color:#fff;font-weight:600}
+.beyond{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px}
+.bcard{border:1px solid var(--line);border-radius:16px;padding:20px;background:rgba(12,12,17,.55);transition:border-color .3s,transform .4s var(--ease)}
+.bcard:hover{border-color:var(--line2);transform:translateY(-4px)}
+.bcard .when{font-family:var(--mono);font-size:13px;color:var(--grey);letter-spacing:.04em}
+.bcard h4{font-size:17px;font-weight:700;margin:6px 0 4px;letter-spacing:-.01em}
+.bcard p{font-size:16.5px;color:var(--grey3);line-height:1.5}
+.bcard .dot{display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:6px;vertical-align:1px}
+@media(max-width:900px){.beyond{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.xp-row{grid-template-columns:1fr;gap:6px}.beyond{grid-template-columns:1fr}}
+
+/* ---------- favourites ---------- */
+#favourites[hidden]{display:none}
+.fav-strip{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:44px;padding-bottom:10px;scrollbar-width:none;cursor:grab}
+.fav-strip::-webkit-scrollbar{display:none}
+.fav{flex:0 0 clamp(240px,30vw,360px);scroll-snap-align:start;position:relative;border-radius:22px;overflow:hidden;aspect-ratio:4/5;background:var(--bg2);border:1px solid var(--line)}
+.fav img{width:100%;height:115%;object-fit:cover;filter:grayscale(1) contrast(1.05);transition:filter .8s,transform .2s linear;will-change:transform}
+.fav:hover img{filter:grayscale(0)}
+.fav figcaption{position:absolute;left:12px;right:12px;bottom:12px;font-size:14.5px;font-weight:600;background:rgba(5,5,7,.7);backdrop-filter:blur(8px);padding:8px 12px;border-radius:12px}
+
+/* ---------- projects ---------- */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-top:40px}
+.tab{font-family:var(--mono);font-size:14.5px;padding:8px 14px;border-radius:999px;border:1px solid var(--line2);color:var(--grey3);transition:all .3s var(--ease)}
+.tab:hover{border-color:var(--grey);color:#fff}
+.tab.on{background:#fff;color:#000;border-color:#fff}
+.tab .n{opacity:.5;margin-left:6px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+@media(max-width:960px){.grid{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.grid{grid-template-columns:1fr}}
+.pc{--c:var(--lav);position:relative;border:1px solid var(--line);border-radius:20px;padding:22px;background:rgba(12,12,17,.7);backdrop-filter:blur(4px);display:flex;flex-direction:column;min-height:230px;overflow:hidden;transition:border-color .4s,transform .5s var(--ease),opacity .5s,box-shadow .4s}
+.pc::before{content:"";position:absolute;inset:0;background:radial-gradient(400px circle at var(--mx,50%) var(--my,0%),color-mix(in srgb,var(--c) 14%,transparent),transparent 60%);opacity:0;transition:opacity .4s;pointer-events:none}
+.pc:hover{border-color:color-mix(in srgb,var(--c) 55%,transparent);transform:translateY(-5px)}
+.pc:hover::before{opacity:1}
+.pc.feat{grid-column:span 2;min-height:260px}
+@media(max-width:620px){.pc.feat{grid-column:auto}}
+.pc.hide,.pc.more{display:none}
+.showmore{display:flex;justify-content:center;margin-top:26px}
+.showmore button{font-family:var(--mono);font-size:14.5px;border:1px solid var(--line2);border-radius:999px;padding:11px 20px;color:var(--grey3);transition:all .3s var(--ease)}
+.showmore button:hover{border-color:var(--mint);color:#fff}
+.showmore[hidden]{display:none}
+.pc .top{display:flex;justify-content:space-between;align-items:center;gap:10px;font-family:var(--mono);font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--grey)}
+.pc .cat{display:flex;align-items:center;gap:7px;color:var(--c)}
+.pc .cat::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--c);box-shadow:0 0 8px var(--c)}
+.pc .badge{color:#000;background:var(--c);padding:2px 8px;border-radius:999px;font-weight:600;letter-spacing:.02em;text-transform:none;font-size:13px}
+.pc h3{font-size:21px;font-weight:700;line-height:1.25;margin:16px 0 8px;letter-spacing:-.02em}
+.pc.feat h3{font-size:clamp(24px,2.6vw,32px)}
+.pc p{font-size:16.5px;color:var(--grey3);line-height:1.55}
+.pc .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.pc .tags span{font-family:var(--mono);font-size:13px;color:var(--grey);border:1px solid var(--line);padding:3px 8px;border-radius:6px}
+.pc .links{display:flex;gap:8px;margin-top:auto;padding-top:18px}
+.pc .links a{font-family:var(--mono);font-size:13.5px;text-decoration:none;border:1px solid var(--line2);padding:6px 11px;border-radius:999px;transition:all .25s}
+.pc .links a:hover{background:var(--c);border-color:var(--c);color:#000}
+.pc .art{position:absolute;right:-20px;bottom:-20px;width:150px;height:150px;opacity:.18;transition:opacity .5s,transform 1s var(--ease)}
+.pc:hover .art{opacity:.4;transform:rotate(20deg)}
+.pc .art *{fill:none;stroke:var(--c);stroke-width:1.2}
+
+/* ---------- education ---------- */
+.edu-grid{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:16px;margin-top:48px}
+@media(max-width:900px){.edu-grid{grid-template-columns:1fr}}
+.panel{border:1px solid var(--line);border-radius:20px;padding:24px;background:rgba(12,12,17,.6)}
+.panel h3{font-family:var(--mono);font-size:13.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;margin-bottom:16px}
+.panel ul{list-style:none;display:grid;gap:12px}
+.panel li{display:flex;justify-content:space-between;gap:12px;font-size:16.5px;color:var(--grey3);border-bottom:1px dashed var(--line);padding-bottom:12px}
+.panel li:last-child{border-bottom:0;padding-bottom:0}
+.panel li b{color:#fff;font-weight:600;display:block}
+.panel li span{font-family:var(--mono);font-size:13.5px;color:var(--grey);white-space:nowrap}
+.big-stat{font-size:52px;font-weight:800;letter-spacing:-.04em;line-height:1;background:linear-gradient(90deg,var(--mint),var(--sky));-webkit-background-clip:text;background-clip:text;color:transparent}
+.certs{display:flex;flex-wrap:wrap;gap:8px}
+.certs a,.certs span{font-size:14.5px;border:1px solid var(--line2);border-radius:999px;padding:6px 12px;color:var(--grey3);text-decoration:none;transition:all .25s}
+.certs a:hover{border-color:var(--peach);color:#fff}
+.certs a::after{content:" ↗";color:var(--peach)}
+
+/* ---------- connect ---------- */
+#connect{padding-bottom:0;overflow:hidden}
+.connect-inner{text-align:center;position:relative;z-index:2}
+#connect h2{font-size:clamp(42px,7vw,96px);line-height:1.02}
+#connect h2 em{font-style:normal;background:linear-gradient(90deg,var(--peach),var(--pink),var(--lav));-webkit-background-clip:text;background-clip:text;color:transparent}
+.email{display:inline-flex;align-items:center;gap:12px;margin-top:30px;font-size:clamp(18px,2.4vw,26px);font-weight:600;text-decoration:none;border-bottom:1px solid var(--line2);padding-bottom:6px;transition:border-color .3s,color .3s}
+.email:hover{border-color:var(--lav);color:var(--lav)}
+.socials{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:36px}
+.socials a{font-family:var(--mono);font-size:14.5px;text-decoration:none;border:1px solid var(--line2);border-radius:999px;padding:9px 16px;color:var(--grey3);transition:all .3s var(--ease)}
+.socials a:hover{color:#000;background:#fff;border-color:#fff;transform:translateY(-3px)}
+.horizon{position:relative;height:clamp(220px,30vw,380px);margin-top:40px}
+.horizon svg{position:absolute;left:50%;bottom:0;width:180%;max-width:none;transform:translateX(-50%)}
+footer{text-align:center;padding:0 var(--gut) 40px;font-family:var(--mono);font-size:13.5px;color:var(--grey);position:relative;z-index:2;margin-top:-90px}
+footer b{color:var(--grey3);font-weight:400}
+
+@media (max-width:640px){
+  body{font-size:17px}
+  section{padding:80px var(--gut)}
+  #hero{padding-top:96px}
+  .scroll-cue{display:none}
+  .btn{flex:1 1 auto;justify-content:center}
+  .xp-row.main .xp-role{font-size:21px}
+  .looking .row{grid-template-columns:1fr;gap:2px}
+  footer{margin-top:-60px}
+}
+/* ---------- mode toggle ---------- */
+.mode{position:relative;font-weight:600;color:#fff!important;border:0!important;background:linear-gradient(#0c0c11,#0c0c11) padding-box,linear-gradient(90deg,var(--pink),var(--lav),var(--sky)) border-box!important;border:1.5px solid transparent!important;box-shadow:0 0 22px -4px rgba(255,189,219,.55)}
+.mode::before{content:"";position:absolute;inset:-5px;border-radius:999px;border:1.5px solid var(--pink);opacity:0;animation:ping 2.4s ease-out infinite;pointer-events:none}
+html.quirky .mode::before,.mode.seen::before{animation:none}
+@keyframes ping{0%{opacity:.8;transform:scale(.9)}100%{opacity:0;transform:scale(1.25)}}
+.mode .mtxt::before{content:"✦ "}
+html.quirky .mode{box-shadow:0 0 26px -2px rgba(201,184,255,.8)}
+.navright{display:flex;align-items:center;gap:10px}
+.mode{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:13.5px;border:1px solid var(--line2);padding:6px 12px 6px 6px;border-radius:999px;color:var(--grey3);transition:border-color .3s,color .3s,background .3s}
+.mode:hover{border-color:var(--pink);color:#fff}
+.mode .sw{position:relative;width:30px;height:18px;border-radius:999px;background:var(--line2);transition:background .4s}
+.mode .sw::after{content:"";position:absolute;top:3px;left:3px;width:12px;height:12px;border-radius:50%;background:#fff;transition:transform .45s var(--ease)}
+.mode[aria-pressed="true"] .sw{background:linear-gradient(90deg,var(--pink),var(--lav))}
+.mode[aria-pressed="true"] .sw::after{transform:translateX(12px)}
+.try-q{display:inline-flex;align-items:center;gap:10px;margin-top:22px;font-size:15.5px;font-weight:600;color:#fff;text-decoration:none;padding:11px 18px;border-radius:999px;border:1.5px dashed var(--pink);background:rgba(255,189,219,.06);opacity:0;transition:opacity 1s var(--ease) .8s,background .3s,transform .3s var(--ease)}
+.try-q:hover{background:rgba(255,189,219,.14);transform:translateY(-2px) rotate(-1deg)}
+.try-q .bhi{width:22px;height:22px;border-radius:50%;background:#000;box-shadow:0 0 0 2px var(--pink),0 0 14px 2px var(--lav);animation:spin 3s linear infinite;background-image:conic-gradient(from 0deg,transparent,rgba(255,189,219,.9),transparent 40%)}
+.ready .try-q{opacity:1}
+
+html:not(.quirky) .q-only{display:none!important}
+html.quirky .f-only{display:none!important}
+html.quirky .label{font-family:var(--hand);font-size:24px;letter-spacing:0;text-transform:none}
+html.quirky .looking h3,html.quirky .panel h3{font-family:var(--hand);font-size:24px;letter-spacing:0;text-transform:none}
+html.quirky h1 em{background:linear-gradient(90deg,var(--pink),var(--peach),var(--lav));-webkit-background-clip:text;background-clip:text}
+html.quirky .pc:hover{transform:translateY(-6px) rotate(-.8deg)}
+html.quirky .cursor{border-color:var(--pink)}
+.hand{font-family:var(--hand);font-weight:700}
+.brag-strip{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.brag-strip span{font-size:14.5px;font-weight:600;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.04);border:1px solid var(--line2)}
+.brag-strip span b{background:linear-gradient(90deg,var(--pink),var(--lav));-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:800}
+.sticker{position:absolute;font-family:var(--hand);font-size:22px;color:#000;background:var(--peach);padding:2px 12px;border-radius:8px;transform:rotate(-7deg);box-shadow:3px 3px 0 #000;white-space:nowrap;z-index:3}
+.portrait .sticker{right:-6%;bottom:6%}
+.scene .sticker{left:8%;bottom:14%;background:var(--mint);transform:rotate(5deg)}
+::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal}
+.toolkit{margin-top:22px;display:grid;gap:12px}
+.toolkit .row{display:grid;grid-template-columns:110px 1fr;gap:12px;align-items:start}
+.toolkit dt{font-family:var(--mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--grey);padding-top:5px}
+.toolkit dd{display:flex;flex-wrap:wrap;gap:6px}
+.toolkit dd span{font-family:var(--mono);font-size:13.5px;border:1px solid var(--line);padding:4px 9px;border-radius:6px;color:var(--grey3)}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,140px);background:#fff;color:#000;font-family:var(--mono);font-size:14.5px;padding:11px 18px;border-radius:999px;z-index:210;transition:transform .45s cubic-bezier(.3,1.4,.5,1);white-space:nowrap}
+.toast.on{transform:translate(-50%,0)}
+@media(max-width:640px){
+  .toolkit .row{grid-template-columns:1fr;gap:4px}
+  .mode .mtxt{font-size:12.5px}
+  .mode .mtxt::before{content:""}
+  .mode{padding:5px 11px 5px 5px;gap:7px}
+  .navcta{padding:7px 11px}
+  .mark .nm{display:none}
+  .sticker{font-size:18px}
+}
+
+/* ---------- black hole transition ---------- */
+.bh{position:fixed;left:50%;top:50%;width:0;height:0;z-index:300;pointer-events:none}
+.bh .core,.bh .disk,.bh .halo,.bh .ripple,.bh .flash{position:absolute;left:50%;top:50%;border-radius:50%;translate:-50% -50%;transform:scale(0)}
+.bh .halo{width:520px;height:520px;background:radial-gradient(circle,rgba(201,184,255,.35),rgba(255,189,219,.12) 40%,transparent 70%)}
+.bh .disk{width:300px;height:300px;background:conic-gradient(from 0deg,#ffbddb,#c9b8ff,#a9d6ff,#b5efd2,#ffcbb3,#ffbddb);-webkit-mask:radial-gradient(circle,transparent 46%,#000 48%,#000 58%,transparent 70%);mask:radial-gradient(circle,transparent 46%,#000 48%,#000 58%,transparent 70%);filter:blur(2px)}
+.bh .core{width:150px;height:150px;background:#000;box-shadow:0 0 40px 10px #000,inset 0 0 30px rgba(201,184,255,.4)}
+.bh .ripple{width:200px;height:200px;border:2px solid rgba(255,255,255,.7)}
+.bh .flash{width:200vmax;height:200vmax;background:radial-gradient(circle,#fff,rgba(255,240,250,.9) 10%,rgba(201,184,255,.4) 30%,transparent 60%)}
+body.warping{overflow:hidden}
+body.warping .cursor,body.warping .cdot{opacity:0}
+
+@media (min-width:900px){
+  body{font-size:19px}
+  h2{font-size:clamp(40px,4.6vw,64px)}
+  .label{font-size:14px}
+  .navlinks,.navcta,.mode .mtxt{font-size:14.5px}
+  .status{font-size:14px}
+  .hero-sub{font-size:21px;max-width:580px}
+  .btn{font-size:17px;padding:15px 24px}
+  .try-q{font-size:16.5px}
+  .about-copy .big{font-size:34px}
+  .about-copy p{font-size:21px}
+  .roles span{font-size:16.5px}
+  .looking .row{font-size:17px}
+  .looking .row dt,.toolkit dt{font-size:13.5px}
+  .toolkit dd span{font-size:14px}
+  .xp-when{font-size:14.5px}
+  .xp-role{font-size:22px}
+  .xp-row.main .xp-role{font-size:27px}
+  .xp-what{font-size:18px}
+  .xp li{font-size:17.5px}
+  .bcard h4{font-size:19px}
+  .bcard p{font-size:16.5px}
+  .tab{font-size:14.5px}
+  .pc h3{font-size:23px}
+  .pc p{font-size:17px}
+  .pc .tags span{font-size:13.5px}
+  .pc .links a{font-size:14px}
+  .panel li{font-size:17px}
+  .certs a,.certs span{font-size:15px}
+  .socials a{font-size:15px}
+  .email{font-size:28px}
+  footer{font-size:14px}
+}
+
+/* ---------- stability + phone hero ---------- */
+html,body{overflow-x:clip;max-width:100%}
+#hero,#connect,section{overflow-x:clip}
+.glow{max-width:100vw}
+@media (max-width:640px){
+  #hero{min-height:auto;padding-top:92px;padding-bottom:64px;text-align:center}
+  .hero-grid{justify-items:center}
+  .scene{position:relative!important;right:auto!important;top:auto!important;width:220px!important;opacity:1!important;z-index:0!important;margin:0 auto 6px;grid-row:1}
+  .scene .layer{transform:none!important}
+  .comet{display:none}
+  .status{font-size:12.5px;padding:7px 12px}
+  h1{font-size:40px;margin-top:16px}
+  .hero-sub{font-size:17px;margin-left:auto;margin-right:auto}
+  .ctas{display:grid;grid-template-columns:1fr 1fr;gap:10px;width:100%}
+  .ctas .btn{justify-content:center;padding:14px 12px;font-size:15.5px}
+  .ctas .btn.primary{grid-column:1/-1}
+  .ctas .btn{white-space:nowrap}
+  .ctas .btn:not(.primary) svg{display:none}
+  .try-q{display:flex;justify-content:center;width:100%;margin-top:12px}
+}
+
+/* ---------- favourites: slideshow + lightbox ---------- */
+.fav-strip{scroll-snap-type:none!important;scroll-behavior:auto}
+.fav{flex:0 0 auto!important;aspect-ratio:auto!important;height:clamp(240px,30vw,380px);width:auto}
+.fav img{width:auto!important;height:100%!important;transform:none!important;display:block}
+.fav{cursor:zoom-in}
+.fav figcaption{display:none}
+.lightbox{position:fixed;inset:0;z-index:260;background:rgba(5,5,7,.92);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;padding:clamp(16px,4vw,48px);opacity:0;visibility:hidden;transition:opacity .35s var(--ease),visibility 0s .35s}
+.lightbox.open{opacity:1;visibility:visible;transition:opacity .35s var(--ease)}
+.lightbox img{max-width:100%;max-height:88svh;border-radius:16px;object-fit:contain;box-shadow:0 30px 80px rgba(0,0,0,.6);transform:scale(.94);transition:transform .45s var(--ease);cursor:default}
+.lightbox.open img{transform:none}
+.lb-close{position:absolute;top:16px;right:16px;width:50px;height:50px;border-radius:50%;background:#fff;color:#000;display:flex;align-items:center;justify-content:center;transition:transform .3s var(--ease)}
+.lb-close:hover{transform:rotate(90deg)}
+.lb-close svg{width:20px}
+
+/* ---------- role lens ---------- */
+.lens{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:36px;padding:14px;border:1px solid var(--line2);border-radius:18px;background:linear-gradient(120deg,rgba(201,184,255,.07),rgba(169,214,255,.04) 50%,transparent)}
+.lens-l{font-family:var(--mono);font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--lav);font-weight:600;margin-right:6px}
+.lchip{font-size:15px;font-weight:600;padding:9px 15px;border-radius:999px;border:1px solid var(--line2);color:var(--grey3);background:rgba(255,255,255,.02);transition:all .3s var(--ease)}
+.lchip:hover{border-color:var(--lav);color:#fff}
+.lchip.on{background:linear-gradient(90deg,var(--lav),var(--sky));color:#000;border-color:transparent}
+.lens-note{margin-top:12px;font-size:15.5px;color:var(--grey3);min-height:1em}
+.lens-note b{color:#fff}
+.lens-note button{font-family:var(--mono);font-size:13px;color:var(--lav);border-bottom:1px dashed var(--lav);margin-left:6px}
+.pc .why{margin-top:12px;padding:10px 12px;border-radius:12px;background:color-mix(in srgb,var(--c) 12%,transparent);border:1px solid color-mix(in srgb,var(--c) 35%,transparent);color:#fff;font-size:15px}
+.pc .why span{display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--c);margin-bottom:2px}
+.pc.fit{border-color:color-mix(in srgb,var(--c) 45%,transparent)}
+.pc.dim{opacity:.5}
+.pc.dim:hover{opacity:1}
+@media(max-width:640px){.lens{padding:12px;gap:6px}.lens-l{width:100%}.lchip{font-size:14px;padding:8px 12px}}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition-duration:.01ms!important;transition-delay:0s!important}
+  [data-r]{opacity:1;transform:none}
+  .draw{stroke-dashoffset:0}
+}
+</style>
+
+<link rel="canonical" href="https://vedant-builds.vercel.app/">
+<script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+<script defer src="/_vercel/insights/script.js"></script>
+
+<link rel="alternate" type="text/markdown" href="/llms.txt" title="LLM-friendly profile">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "ProfilePage", "@id": "https://vedant-builds.vercel.app/#page", "url": "https://vedant-builds.vercel.app/", "name": "Vedant Pawar — Portfolio", "dateModified": "2026-10-19", "mainEntity": {"@id": "https://vedant-builds.vercel.app/#person"}}, {"@type": "Person", "@id": "https://vedant-builds.vercel.app/#person", "name": "Vedant Pawar", "jobTitle": "Product-minded Software Engineer", "description": "Product-minded software engineer who scopes, designs, builds, ships and measures products end to end. Open to product engineering, product management, data & analytics, full-stack and Founder's Office roles.", "url": "https://vedant-builds.vercel.app/", "image": "https://vedant-builds.vercel.app/assets/me.jpg", "email": "mailto:hello.vedantp@gmail.com", "address": {"@type": "PostalAddress", "addressLocality": "Mumbai", "addressCountry": "IN"}, "worksFor": {"@type": "Organization", "name": "Tekkers AI"}, "alumniOf": {"@type": "CollegeOrUniversity", "name": "V.E.S. Institute of Technology, Mumbai"}, "hasCredential": {"@type": "EducationalOccupationalCredential", "credentialCategory": "degree", "name": "B.E. Computer Engineering (CGPA 9.56)"}, "seeks": [{"@type": "Demand", "name": "Product engineering"}, {"@type": "Demand", "name": "Product management"}, {"@type": "Demand", "name": "Data & analytics"}, {"@type": "Demand", "name": "Full-stack"}, {"@type": "Demand", "name": "Founder's Office"}], "award": ["DevIgnite Hackathon — 1st place (2024)", "Datazen Datathon — 1st place (2024)", "J.P. Morgan Code for Good — top 6 from VESIT (2024)"], "knowsAbout": ["Product management", "Product engineering", "Full-stack development", "Product analytics", "PostHog", "Python", "TypeScript", "React", "Next.js", "Node.js", "Flutter", "FastAPI", "Firebase", "SQL", "Snowflake", "Power BI", "Tableau", "LLM applications", "Figma"], "sameAs": ["https://github.com/codderv006", "https://www.linkedin.com/in/vedant-pawar/", "https://x.com/Vedant52455825", "https://www.instagram.com/vedant.time/", "https://www.kaggle.com/vedantxtime", "https://codepen.io/codderv006", "https://vedantxdesign.my.canva.site/"]}, {"@type": "ItemList", "@id": "https://vedant-builds.vercel.app/#projects", "name": "Projects by Vedant Pawar", "itemListElement": [{"@type": "ListItem", "position": 1, "item": {"@type": "CreativeWork", "name": "Live Predictions (Tekkers)", "description": "Live score forecasts + leaderboard; #1 acquisition driver", "keywords": "Product management, Product engineering, Full-stack, Data & analytics, Full-stack, PostHog", "creator": {"@id": "https://vedant-builds.vercel.app/#person"}}}, {"@type": "ListItem", "position": 2, "item": {"@type": "CreativeWork", "name": "Push + reachouts engine (Tekkers)", "description": "Push notifications, reminders, nudges, campaigns", "keywords": "Product engineering, Product management, Full-stack, Founder's Office, Backend", "creator": {"@id": "https://vedant-builds.vercel.app/#person"}}}, {"@type": "ListItem", "position": 3, "item": {"@type": "CreativeWork", "name": "Analytics, minus the analyst (Tekkers)", "description": "PostHog funnels, cohorts, DAU/WAU, daily digests", "keywords": "Data & analytics, Product management, Founder's Office, PostHog", "creator": {"@id": "https://vedant-builds.vercel.app/#person"}}}, {"@type": "ListItem", "position": 4, "item": {"@type": "CreativeWork", "name": "Personalised For You feed (Tekkers)", "description": "Per-user team feed, live polling", "keywords": "Product engineering, Full-stack, Mobile, backend", "creator": {"@id": "https://vedant-builds.vercel.app/#person"}}}, {"@type": "ListItem", "position": 5, "item": {"@type": "CreativeWork", "name": "Saathi (Bolna hackathon)", "description": "Voice guide that helps older parents use everyday apps step by step in English and Marathi; first flow books Ola/Uber/Rapido rides; never acts on the user's behalf", "keywords": "Product management, Product engineering, Full-stack, Flutter, Bolna voice AI, Firebase, Node.js", "creator": {"@id": "https://vedant-builds.vercel.app/#person"}}}, {"@type": "ListItem", "position": 6, "item": {"@type": "CreativeWork", "name": "Girega Ya Nahi", "description": "Predicts when a biscuit breaks in chai: 10-stage physics pipeline, 5,000-run Monte Carlo, Bayesian learning", "keywords": "Product engineering, Full-stack, Data & analytics, Next.js, TypeScript, Gemini", "creator": {"@id": "https://vedant-builds.vercel.app/#person"}, "url": "https://github.com/codderv006/girega-ya-nahi"}}, {"@type": "ListItem", "position": 7, "item": {"@type": "CreativeWork", "name": "The Football Data Dilemma", "description": "Player analysis to build a profitable team — Datazen Datathon 1st place", "keywords": "Data & analytics, Product management, Python", "creator": {"@id": "https://vedant-builds.vercel.app/#person"}, "url": "https://github.com/codderv006/GFC-datathon"}}, {"@type": "ListItem", "position": 8, "item": {"@type": "CreativeWork", "name": "Quick Fill", "description": "Book CNG station slots by live availability — DevIgnite Hackathon 1st place", "keywords": "Product engineering, Product management, Full-stack, Flutter, Dart", "creator": {"@id": "https://vedant-builds.vercel.app/#person"}, "url": "https://github.com/codderv006/DevIgnite-24-Quick-Fill-GFC01"}}, {"@type": "ListItem", "position": 9, "item": {"@type": "CreativeWork", "name": "Janhit Mitra", "description": "AI grievance platform for citizens and authorities; 100+ user pilot, 40% faster submissions", "keywords": "Product management, Product engineering, Founder's Office, Flutter, Firebase, Botpress", "creator": {"@id": "https://vedant-builds.vercel.app/#person"}, "url": "https://github.com/VedantTgithub/mum"}}, {"@type": "ListItem", "position": 10, "item": {"@type": "CreativeWork", "name": "LingoAI", "description": "Learn any language with an AI conversation partner", "keywords": "Product engineering, Product management, TypeScript, AI", "creator": {"@id": "https://vedant-builds.vercel.app/#person"}, "url": "https://youtu.be/8TLN_rZc90U"}}, {"@type": "ListItem", "position": 11, "item": {"@type": "CreativeWork", "name": "Evolve Chargemates", "description": "Decentralised EV-charging network (two-sided marketplace); vision, MVP, GTM", "keywords": "Product management, Founder's Office, Product engineering, Flutter, Firebase, Maps", "creator": {"@id": "https://vedant-builds.vercel.app/#person"}, "url": "https://youtu.be/b2F9AFB2fgg"}}, {"@type": "ListItem", "position": 12, "item": {"@type": "CreativeWork", "name": "Psychalyzer", "description": "Children's mental-wellbeing assessment (Smart India Hackathon)", "keywords": "Product engineering, Product management, Flutter, ML", "creator": {"@id": "https://vedant-builds.vercel.app/#person"}, "url": "https://github.com/codderv006/psychalyzer-001-SIH"}}, {"@type": "ListItem", "position": 13, "item": {"@type": "CreativeWork", "name": "DSA Visualizer", "description": "Step-by-step data structure visualisations", "keywords": "Full-stack, JavaScript", "creator": {"@id": "https://vedant-builds.vercel.app/#person"}, "url": "https://github.com/codderv006/DSA-VISUALIZER-TOOL"}}, {"@type": "ListItem", "position": 14, "item": {"@type": "CreativeWork", "name": "Cover Letter Generator", "description": "AI cover letters via DeepSeek", "keywords": "Full-stack, Product engineering, React, AI", "creator": {"@id": "https://vedant-builds.vercel.app/#person"}, "url": "https://cover-letter-generator-deepseek.vercel.app"}}, {"@type": "ListItem", "position": 15, "item": {"@type": "CreativeWork", "name": "Mirror", "description": "Self-help diary app", "keywords": "Product engineering, Anvil, Python", "creator": {"@id": "https://vedant-builds.vercel.app/#person"}, "url": "https://mirror-self-help.anvil.app"}}, {"@type": "ListItem", "position": 16, "item": {"@type": "CreativeWork", "name": "Sketchy", "description": "Draw in the air with hand tracking", "keywords": "Product engineering, Python, OpenCV, MediaPipe", "creator": {"@id": "https://vedant-builds.vercel.app/#person"}, "url": "https://github.com/codderv006/sketchy"}}, {"@type": "ListItem", "position": 17, "item": {"@type": "CreativeWork", "name": "Data Analysis Playground", "description": "Upload data, write Python, see results live", "keywords": "Data & analytics, Full-stack, Streamlit, Pandas", "creator": {"@id": "https://vedant-builds.vercel.app/#person"}, "url": "https://data-analysis-playground.streamlit.app"}}, {"@type": "ListItem", "position": 18, "item": {"@type": "CreativeWork", "name": "NLP Visualizer", "description": "Learn NLP concepts visually", "keywords": "Full-stack, JavaScript", "creator": {"@id": "https://vedant-builds.vercel.app/#person"}, "url": "https://nlpviz-qvao.onrender.com/"}}, {"@type": "ListItem", "position": 19, "item": {"@type": "CreativeWork", "name": "Feeldot", "description": "LLM chat app on open-source models", "keywords": "Full-stack, Product engineering, Python, LLM", "creator": {"@id": "https://vedant-builds.vercel.app/#person"}, "url": "https://github.com/codderv006/LLM-ChatBot"}}, {"@type": "ListItem", "position": 20, "item": {"@type": "CreativeWork", "name": "Text to Handwriting", "description": "Typed text rendered as handwriting on A4", "keywords": "Product engineering, Python, Pillow", "creator": {"@id": "https://vedant-builds.vercel.app/#person"}, "url": "https://github.com/codderv006/Text-to-Handwriting-python"}}, {"@type": "ListItem", "position": 21, "item": {"@type": "CreativeWork", "name": "FastAPI URL Shortener", "description": "Minimal link shortener", "keywords": "Full-stack, Python, FastAPI", "creator": {"@id": "https://vedant-builds.vercel.app/#person"}, "url": "https://github.com/codderv006/URL-shortner-FAST-API"}}, {"@type": "ListItem", "position": 22, "item": {"@type": "CreativeWork", "name": "Diabetes Predictor", "description": "ML diabetes-risk app", "keywords": "Data & analytics, Python, ML", "creator": {"@id": "https://vedant-builds.vercel.app/#person"}, "url": "https://github.com/codderv006/Diabetes-Predictor-App"}}, {"@type": "ListItem", "position": 23, "item": {"@type": "CreativeWork", "name": "Mobile Market Analysis, India", "description": "Power BI dashboard on Flipkart phone listings", "keywords": "Data & analytics, Product management, Power BI", "creator": {"@id": "https://vedant-builds.vercel.app/#person"}, "url": "https://drive.google.com/file/d/1fvwU3erGI_JJwvk6pQ4RTKt9oUqhwfRZ/view"}}, {"@type": "ListItem", "position": 24, "item": {"@type": "CreativeWork", "name": "Mood-Based Movie Recommender", "description": "Recommendations from a Snowflake warehouse", "keywords": "Data & analytics, Full-stack, Snowflake, SQL, Streamlit", "creator": {"@id": "https://vedant-builds.vercel.app/#person"}, "url": "https://github.com/codderv006/movieRec-snowflake"}}, {"@type": "ListItem", "position": 25, "item": {"@type": "CreativeWork", "name": "IBM HR Attrition Analysis", "description": "Tableau attrition dashboard", "keywords": "Data & analytics, Founder's Office, Tableau", "creator": {"@id": "https://vedant-builds.vercel.app/#person"}, "url": "https://public.tableau.com/views/HRAnalyticsEmployeeAttritionPerformance_17494550482680/Dashboard1"}}, {"@type": "ListItem", "position": 26, "item": {"@type": "CreativeWork", "name": "Slango", "description": "Slang simplifier", "keywords": "C++", "creator": {"@id": "https://vedant-builds.vercel.app/#person"}, "url": "https://github.com/codderv006/Slango-a-Slang-Simplifier"}}, {"@type": "ListItem", "position": 27, "item": {"@type": "CreativeWork", "name": "Blender by Vedant", "description": "3D art and renders", "keywords": "Blender", "creator": {"@id": "https://vedant-builds.vercel.app/#person"}, "url": "https://github.com/codderv006/Blender-by-vedant"}}]}]}</script>
+</head>
+<body>
+
+<canvas id="sky" aria-hidden="true"></canvas>
+<div class="glow g1" aria-hidden="true"></div>
+<div class="glow g2" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"></div><div class="cdot" aria-hidden="true"></div>
+
+<nav id="nav">
+  <a class="mark" href="#hero" aria-label="Vedant Pawar, home">
+    <svg viewBox="0 0 30 30" aria-hidden="true"><circle cx="15" cy="15" r="6" fill="none" stroke="#fff" stroke-width="1.4"/><g class="orb"><ellipse cx="15" cy="15" rx="13" ry="5" fill="none" stroke="#c9b8ff" stroke-width="1.2" transform="rotate(-25 15 15)"/><circle cx="27" cy="11" r="1.8" fill="#a9d6ff"/></g></svg>
+    <span class="nm">Vedant Pawar</span>
+  </a>
+  <div class="navlinks">
+    <a href="#about">About</a><a href="#work">Work</a><a href="#projects">Projects</a><a href="#connect">Connect</a>
+  </div>
+  <div class="navright">
+    <button class="mode" id="mode" aria-pressed="false" aria-label="Quirky mode"><span class="sw" aria-hidden="true"></span><span class="mtxt">Quirky</span></button>
+    <a class="navcta" href="https://drive.google.com/file/d/1L34E1v_LDiduGgZJyUZfnq7fH_mTsSgt/view?usp=drive_link" target="_blank" rel="noopener">Resume ↗</a>
+  </div>
+</nav>
+
+<main>
+<!-- ============ HERO ============ -->
+<section id="hero">
+  <div class="wrap hero-grid" id="heroGrid">
+    <div class="hero-copy">
+      <span class="status"><i></i><span data-q="Accepting: hard problems &amp; tiny teams 🛰️">Open to product engineering, PM, data &amp; full-stack roles</span></span>
+      <h1>
+        <span class="l"><span data-q="I ship things <em>stupid fast</em>.">I like to solve <em>problems</em>.</span></span>
+        <span class="l"><span data-q="Thinking first. Obviously.">Then I ship the fix.</span></span>
+      </h1>
+      <p class="hero-sub" data-q="Hired as a dev, became the product guy. Quit a campus job in <b>11 days</b>. When the team got cut, <b>they kept me</b>. Yes, I'm bragging.">Product-minded engineer. I <b>scope it, design it, build it, ship it and measure it.</b> Currently owning product end to end at Tekkers AI.</p>
+      <div class="brag-strip q-only"><span><b>#1</b> acquisition feature</span><span><b>₹1.3L</b> raised</span><span><b>2×</b> hackathon wins</span><span><b>80</b> repos</span><span><b>9.56</b> CGPA</span></div>
+      <div class="ctas">
+        <a class="btn primary" href="https://drive.google.com/file/d/1L34E1v_LDiduGgZJyUZfnq7fH_mTsSgt/view?usp=drive_link" target="_blank" rel="noopener">Resume <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        <a class="btn" href="https://vedantxdesign.my.canva.site/" target="_blank" rel="noopener">Design portfolio <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        <a class="btn" href="https://github.com/codderv006" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+      </div>
+      <a href="#" class="try-q f-only" id="tryQ"><span class="bhi" aria-hidden="true"></span>Psst… flip to quirky mode</a>
+    </div>
+
+    <div class="scene" id="scene" aria-hidden="true">
+      <span class="sticker q-only">will ship for chai ☕</span>
+      <span class="comet"></span>
+      <!-- far: orbits + constellation -->
+      <div class="layer" data-depth="0.3">
+        <svg viewBox="0 0 500 500">
+          <ellipse class="ln" cx="250" cy="250" rx="236" ry="78" transform="rotate(-18 250 250)" stroke="#2b2b35" stroke-width="1" stroke-dasharray="2 7"/>
+          <ellipse class="ln" cx="250" cy="250" rx="200" ry="200" stroke="#1d1d25" stroke-width="1"/>
+          <g class="ln" stroke="#5c5c66" stroke-width="1">
+            <path class="draw" pathLength="1" d="M40 90L92 58L150 72L176 30L214 44" style="animation-delay:.6s"/>
+            <path class="draw" pathLength="1" d="M360 430L410 400L452 418L470 372" style="animation-delay:1s"/>
+          </g>
+          <g fill="#fff"><circle cx="40" cy="90" r="2"/><circle cx="92" cy="58" r="2.4"/><circle cx="150" cy="72" r="1.6"/><circle cx="176" cy="30" r="2.2"/><circle cx="214" cy="44" r="1.6"/><circle cx="360" cy="430" r="1.8"/><circle cx="410" cy="400" r="2.4"/><circle cx="452" cy="418" r="1.6"/><circle cx="470" cy="372" r="2"/></g>
+        </svg>
+      </div>
+      <!-- mid: ringed planet -->
+      <div class="layer" data-depth="0.7">
+        <svg viewBox="0 0 500 500">
+          <defs><clipPath id="pc"><circle cx="250" cy="250" r="112"/></clipPath>
+            <linearGradient id="ringG" x1="0" x2="1"><stop offset="0" stop-color="#c9b8ff"/><stop offset="1" stop-color="#a9d6ff"/></linearGradient></defs>
+          <g transform="rotate(-18 250 250)"><path class="ln draw" pathLength="1" d="M60 250A190 44 0 0 1 440 250" stroke="url(#ringG)" stroke-width="1.4" opacity=".7"/></g>
+          <circle cx="250" cy="250" r="112" fill="#050507"/>
+          <circle class="ln draw" pathLength="1" cx="250" cy="250" r="112" stroke="#fff" stroke-width="1.4"/>
+          <g clip-path="url(#pc)" class="ln" stroke="#5c5c66" stroke-width="1">
+            <ellipse cx="250" cy="196" rx="130" ry="26"/><ellipse cx="250" cy="250" rx="130" ry="30"/><ellipse cx="250" cy="304" rx="130" ry="26"/>
+            <path d="M175 330c40-12 110-12 150 0" stroke="#c9b8ff" opacity=".6"/>
+            <circle cx="300" cy="200" r="14" stroke="#8d8d98"/><circle cx="214" cy="290" r="8" stroke="#8d8d98"/>
+          </g>
+          <g transform="rotate(-18 250 250)"><path class="ln draw" pathLength="1" d="M60 250A190 44 0 0 0 440 250" stroke="url(#ringG)" stroke-width="1.6" style="animation-delay:.3s"/></g>
+          <!-- moon on orbit -->
+          <g transform="rotate(-18 250 250)">
+            <path id="moonOrbit" d="M14 250a236 78 0 1 0 472 0a236 78 0 1 0 -472 0" fill="none"/>
+            <g><circle r="9" fill="#050507" stroke="#a9d6ff" stroke-width="1.3"/><path d="M-3-4a6 6 0 0 0 0 8" fill="none" stroke="#a9d6ff" stroke-width="1"/>
+              <animateMotion dur="22s" repeatCount="indefinite" rotate="0"><mpath href="#moonOrbit"/></animateMotion></g>
+          </g>
+        </svg>
+      </div>
+      <!-- near: satellite + sparkles -->
+      <div class="layer" data-depth="1.3">
+        <svg viewBox="0 0 500 500">
+          <g class="sat ln" stroke="#fff" stroke-width="1.2" transform="translate(392 112)">
+            <rect x="-8" y="-6" width="16" height="12" rx="2"/>
+            <path d="M-8 0h-10M8 0h10"/>
+            <rect x="-40" y="-9" width="22" height="18" stroke="#b5efd2"/><path d="M-33-9v18M-25-9v18" stroke="#b5efd2"/>
+            <rect x="18" y="-9" width="22" height="18" stroke="#b5efd2"/><path d="M25-9v18M33-9v18" stroke="#b5efd2"/>
+            <path d="M0-6v-9"/><circle cx="0" cy="-17" r="2.5"/>
+          </g>
+          <g class="ln" stroke="#ffcbb3" stroke-width="1.2">
+            <path class="sparkle" d="M88 360v18M79 369h18"/>
+            <path class="sparkle" d="M130 180v10M125 185h10" style="animation-delay:1s" stroke="#fff"/>
+            <path class="sparkle" d="M440 300v12M434 306h12" style="animation-delay:2s" stroke="#c9b8ff"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue"><span></span>SCROLL</div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="label" data-r style="color:var(--lav)"><i></i>About</span>
+      <h2 data-r data-q="Builder by day.<br><span class='soft'>Overthinker by night.</span>">Engineer by training.<br><span class="soft">Product thinker by nature.</span></h2></div>
+      <svg class="constel" data-r viewBox="0 0 150 60" aria-hidden="true"><path pathLength="1" d="M5 50L40 20L80 34L112 8L145 28"/><circle cx="5" cy="50" r="2"/><circle cx="40" cy="20" r="2.5"/><circle cx="80" cy="34" r="1.8"/><circle cx="112" cy="8" r="2.4"/><circle cx="145" cy="28" r="1.8"/></svg>
+    </div>
+
+    <div class="about-grid">
+      <div class="portrait" data-r data-speed="-0.06">
+        <svg viewBox="0 0 100 100" aria-hidden="true">
+          <g class="o1"><circle cx="50" cy="50" r="49" fill="none" stroke="#2b2b35" stroke-width=".4" stroke-dasharray="1 3"/><circle cx="50" cy="1" r="1.4" fill="#c9b8ff"/></g>
+          <g class="o2"><ellipse cx="50" cy="50" rx="47" ry="20" fill="none" stroke="#2b2b35" stroke-width=".4" transform="rotate(30 50 50)"/><circle cx="91" cy="73" r="1.2" fill="#b5efd2"/></g>
+        </svg>
+        <div class="frame"><img src="assets/me.jpg" alt="Vedant Pawar" loading="lazy"></div>
+        <span class="sticker q-only">that's me 👋</span>
+      </div>
+
+      <div class="about-copy">
+        <p class="big" data-r data-q="I once modelled fluid physics to predict when a biscuit breaks in chai. <span style='color:var(--pink)'>For fun.</span> Imagine me with a real problem.">I'm not the guy who lives to write code. I'm the guy who can't stop asking <span style="color:var(--lav)">why a feature exists</span>, who it's for, and whether it solves the right problem.</p>
+        <p data-r data-q="Code? Mine. Design? Mine. Analytics, demos, sponsor deals, MOUs? <b>Also mine.</b>">I build well enough to <b>own the whole thing</b>, from scope to ship to the analytics after. But the thinking before the code is what drives me.</p>
+        <p data-r data-q="No blueprint, no handoffs, no problem. Off the clock: AI experiments, side quests, and staring at space.">I like messy problems: no blueprint, no one to hand off to, no obvious answer. Off the clock, it's AI experiments, side projects and anything space.</p>
+
+        <div class="looking" data-r>
+          <h3 data-q="Hire me for 👇">What I'm looking for</h3>
+          <div class="roles"><span>Product engineering</span><span>Product management</span><span>Data &amp; analytics</span><span>Full-stack development</span><span>Founder's Office</span></div>
+          <dl>
+            <div class="row"><dt>Into</dt><dd>Consumer products people return to · AI-native products · data-driven teams · deep tech &amp; space</dd></div>
+            <div class="row"><dt>Best at</dt><dd>Taking a fuzzy problem to a shipped, measured product with a small team</dd></div>
+            <div class="row"><dt>Based in</dt><dd>Mumbai · open to relocating</dd></div>
+          </dl>
+        </div>
+
+        <dl class="toolkit" data-r>
+          <div class="row"><dt>Languages</dt><dd><span>Python</span><span>JavaScript</span><span>TypeScript</span><span>Dart</span><span>Java</span><span>C</span><span>SQL</span></dd></div>
+          <div class="row"><dt>Build</dt><dd><span>React</span><span>Next.js</span><span>Node.js</span><span>Flutter</span><span>FastAPI</span><span>Anvil</span><span>Firebase</span><span>MongoDB</span></dd></div>
+          <div class="row"><dt>Data &amp; AI</dt><dd><span>Pandas</span><span>NumPy</span><span>scikit-learn</span><span>TensorFlow</span><span>OpenCV</span><span>LLMs</span><span>Snowflake</span><span>Power BI</span><span>Tableau</span></dd></div>
+          <div class="row"><dt>Product</dt><dd><span>PostHog</span><span>Figma</span><span>Blender</span><span>Git</span><span>Vercel</span></dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORK ============ -->
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="label" data-r style="color:var(--sky)"><i></i>Work</span>
+      <h2 data-r data-q="Places I left better than I found them.">Where I've shipped.</h2></div>
+      <svg class="constel" data-r viewBox="0 0 150 60" aria-hidden="true"><path pathLength="1" d="M5 20L34 44L70 30L98 52L145 14"/><circle cx="5" cy="20" r="2"/><circle cx="34" cy="44" r="2.4"/><circle cx="70" cy="30" r="1.8"/><circle cx="98" cy="52" r="2"/><circle cx="145" cy="14" r="2.5"/></svg>
+    </div>
+
+    <div class="xp">
+      <div class="xp-row main" data-r>
+        <div class="xp-when"><b>Aug 2025 – now</b>Houston, US · remote</div>
+        <div>
+          <div class="xp-role">Tekkers AI <span>· Full-stack developer → product owner</span></div>
+          <p class="xp-what" data-q="Hired as a dev. Accidentally became the PM, the designer and the analyst too. When the team got cut, I'm the one they kept.">Owned 10+ features end to end: requirements, UX, architecture, deploy and post-launch analytics. No PM, no designer, no handoffs.</p>
+          <ul>
+            <li>Shipped <b>Live Predictions</b> from scratch. It became the app's <b>#1 acquisition driver</b> within weeks.</li>
+            <li>Built the <b>personalised For You feed</b> and handled every iOS / Android edge case solo.</li>
+            <li>Designed the <b>Communications tab</b>: auto reminders, invite nudges, fill-the-spots campaigns.</li>
+            <li>Architected <b>push notifications</b> end to end: pipeline, routing, low-latency schema.</li>
+            <li>Set up <b>PostHog analytics</b> (funnels, cohorts, DAU/WAU) with automated daily digests.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="xp-row" data-r>
+        <div class="xp-when"><b>Jul – Aug 2025</b>Navi Mumbai</div>
+        <div><div class="xp-role">Capgemini <span>· Software engineer</span></div><p class="xp-what" data-q="Speedrun: joined, looked around, left in 11 days. ⚡">Campus placement. Left after 11 days to build at a startup.</p></div>
+      </div>
+      <div class="xp-row" data-r>
+        <div class="xp-when"><b>May 2025</b>Thane · on-site</div>
+        <div><div class="xp-role">Unsquare <span>· UI/UX intern</span></div><p class="xp-what">Wireframes to high-fidelity prototypes in Figma for mobile and web.</p></div>
+      </div>
+      <div class="xp-row" data-r>
+        <div class="xp-when"><b>May – Jul 2024</b>Bangalore · remote</div>
+        <div><div class="xp-role">GrapheneAI <span>· Data intern</span></div><p class="xp-what">AI pipeline testing, data cleaning and scraping, chatbot parameter testing.</p></div>
+      </div>
+      <div class="xp-row" data-r>
+        <div class="xp-when"><b>May – Jul 2024</b>remote</div>
+        <div><div class="xp-role">Outlier AI <span>· Language contributor</span></div><p class="xp-what">Wrote, ranked and edited prompts and responses to train AI models.</p></div>
+      </div>
+      <div class="xp-row" data-r>
+        <div class="xp-when"><b>May – Jul 2024</b>VESIT, Mumbai</div>
+        <div><div class="xp-role">VESIT <span>· Summer intern</span></div><p class="xp-what">Co-built PictoNarrot, an app that helps children with special needs learn language through narrated stories.</p></div>
+      </div>
+    </div>
+
+    <div class="beyond">
+      <div class="bcard" data-r><div class="when"><span class="dot" style="background:var(--lav)"></span>2024 – 25</div><h4>CodeCell · Student Head</h4><p>Ran a 600+ hacker hackathon and 1300+ attendee workshops. Raised ₹1.3L + $1000 from sponsors.</p></div>
+      <div class="bcard" data-r style="transition-delay:.08s"><div class="when"><span class="dot" style="background:var(--sky)"></span>College</div><h4>CSI · Operations</h4><p>Kept events running: logistics, people and the unglamorous stuff.</p></div>
+      <div class="bcard" data-r style="transition-delay:.16s"><div class="when"><span class="dot" style="background:var(--mint)"></span>2022 – now</div><h4>NASA GLOBE Observer</h4><p>Citizen scientist. Visual and written reports on cloud conditions.</p></div>
+      <div class="bcard" data-r style="transition-delay:.24s"><div class="when"><span class="dot" style="background:var(--peach)"></span>2022 – 23</div><h4>VESIT Photo Circle</h4><p>Photographer and editor covering every college event.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAVOURITES ============ -->
+<section id="favourites" hidden>
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="label" data-r style="color:var(--peach)"><i></i>Favourites</span>
+      <h2 data-r data-q="Proof I leave my desk 📸">Moments that shaped me.</h2></div>
+    </div>
+    <div class="fav-strip" id="favStrip"></div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="label" data-r style="color:var(--mint)"><i></i>Projects</span>
+      <h2 data-r data-q="22 builds. 2 trophies.<br><span class='soft'>0 regrets.</span>">Things I've built.<br><span class="soft">Some for fun, all for real.</span></h2></div>
+      <svg class="constel" data-r viewBox="0 0 150 60" aria-hidden="true"><path pathLength="1" d="M5 40L30 12L66 22L90 50L120 36L145 50"/><circle cx="5" cy="40" r="2.2"/><circle cx="30" cy="12" r="2"/><circle cx="66" cy="22" r="2.6"/><circle cx="90" cy="50" r="1.8"/><circle cx="120" cy="36" r="2"/><circle cx="145" cy="50" r="1.6"/></svg>
+    </div>
+    <div class="lens" id="lens" role="group" aria-label="Filter projects by role" data-r></div>
+    <p class="lens-note" id="lensNote" aria-live="polite"></p>
+    <div class="tabs" id="tabs" role="tablist" data-r></div>
+    <div class="grid" id="grid"></div>
+    <div class="showmore" id="showmore"><button id="moreBtn"></button></div>
+    <noscript>
+  <section id="projects-static" style="padding:40px var(--gut,20px);max-width:1160px;margin:0 auto">
+    <h2>Projects</h2>
+    <ul>
+      <li><b>Live Predictions (Tekkers)</b>: Live score forecasts + leaderboard; #1 acquisition driver. Stack: Full-stack, PostHog. Shows: Product management, Product engineering, Full-stack, Data & analytics.</li><li><b>Push + reachouts engine (Tekkers)</b>: Push notifications, reminders, nudges, campaigns. Stack: Backend. Shows: Product engineering, Product management, Full-stack, Founder's Office.</li><li><b>Analytics, minus the analyst (Tekkers)</b>: PostHog funnels, cohorts, DAU/WAU, daily digests. Stack: PostHog. Shows: Data & analytics, Product management, Founder's Office.</li><li><b>Personalised For You feed (Tekkers)</b>: Per-user team feed, live polling. Stack: Mobile, backend. Shows: Product engineering, Full-stack.</li><li><b>Saathi (Bolna hackathon)</b>: Voice guide that helps older parents use everyday apps step by step in English and Marathi; first flow books Ola/Uber/Rapido rides; never acts on the user&#x27;s behalf. Stack: Flutter, Bolna voice AI, Firebase, Node.js. Shows: Product management, Product engineering, Full-stack.</li><li><b>Girega Ya Nahi</b>: Predicts when a biscuit breaks in chai: 10-stage physics pipeline, 5,000-run Monte Carlo, Bayesian learning. Stack: Next.js, TypeScript, Gemini. Shows: Product engineering, Full-stack, Data & analytics. <a href="https://github.com/codderv006/girega-ya-nahi">https://github.com/codderv006/girega-ya-nahi</a></li><li><b>The Football Data Dilemma</b>: Player analysis to build a profitable team — Datazen Datathon 1st place. Stack: Python. Shows: Data & analytics, Product management. <a href="https://github.com/codderv006/GFC-datathon">https://github.com/codderv006/GFC-datathon</a></li><li><b>Quick Fill</b>: Book CNG station slots by live availability — DevIgnite Hackathon 1st place. Stack: Flutter, Dart. Shows: Product engineering, Product management, Full-stack. <a href="https://github.com/codderv006/DevIgnite-24-Quick-Fill-GFC01">https://github.com/codderv006/DevIgnite-24-Quick-Fill-GFC01</a></li><li><b>Janhit Mitra</b>: AI grievance platform for citizens and authorities; 100+ user pilot, 40% faster submissions. Stack: Flutter, Firebase, Botpress. Shows: Product management, Product engineering, Founder's Office. <a href="https://github.com/VedantTgithub/mum">https://github.com/VedantTgithub/mum</a></li><li><b>LingoAI</b>: Learn any language with an AI conversation partner. Stack: TypeScript, AI. Shows: Product engineering, Product management. <a href="https://youtu.be/8TLN_rZc90U">https://youtu.be/8TLN_rZc90U</a></li><li><b>Evolve Chargemates</b>: Decentralised EV-charging network (two-sided marketplace); vision, MVP, GTM. Stack: Flutter, Firebase, Maps. Shows: Product management, Founder's Office, Product engineering. <a href="https://youtu.be/b2F9AFB2fgg">https://youtu.be/b2F9AFB2fgg</a></li><li><b>Psychalyzer</b>: Children&#x27;s mental-wellbeing assessment (Smart India Hackathon). Stack: Flutter, ML. Shows: Product engineering, Product management. <a href="https://github.com/codderv006/psychalyzer-001-SIH">https://github.com/codderv006/psychalyzer-001-SIH</a></li><li><b>DSA Visualizer</b>: Step-by-step data structure visualisations. Stack: JavaScript. Shows: Full-stack. <a href="https://github.com/codderv006/DSA-VISUALIZER-TOOL">https://github.com/codderv006/DSA-VISUALIZER-TOOL</a></li><li><b>Cover Letter Generator</b>: AI cover letters via DeepSeek. Stack: React, AI. Shows: Full-stack, Product engineering. <a href="https://cover-letter-generator-deepseek.vercel.app">https://cover-letter-generator-deepseek.vercel.app</a></li><li><b>Mirror</b>: Self-help diary app. Stack: Anvil, Python. Shows: Product engineering. <a href="https://mirror-self-help.anvil.app">https://mirror-self-help.anvil.app</a></li><li><b>Sketchy</b>: Draw in the air with hand tracking. Stack: Python, OpenCV, MediaPipe. Shows: Product engineering. <a href="https://github.com/codderv006/sketchy">https://github.com/codderv006/sketchy</a></li><li><b>Data Analysis Playground</b>: Upload data, write Python, see results live. Stack: Streamlit, Pandas. Shows: Data & analytics, Full-stack. <a href="https://data-analysis-playground.streamlit.app">https://data-analysis-playground.streamlit.app</a></li><li><b>NLP Visualizer</b>: Learn NLP concepts visually. Stack: JavaScript. Shows: Full-stack. <a href="https://nlpviz-qvao.onrender.com/">https://nlpviz-qvao.onrender.com/</a></li><li><b>Feeldot</b>: LLM chat app on open-source models. Stack: Python, LLM. Shows: Full-stack, Product engineering. <a href="https://github.com/codderv006/LLM-ChatBot">https://github.com/codderv006/LLM-ChatBot</a></li><li><b>Text to Handwriting</b>: Typed text rendered as handwriting on A4. Stack: Python, Pillow. Shows: Product engineering. <a href="https://github.com/codderv006/Text-to-Handwriting-python">https://github.com/codderv006/Text-to-Handwriting-python</a></li><li><b>FastAPI URL Shortener</b>: Minimal link shortener. Stack: Python, FastAPI. Shows: Full-stack. <a href="https://github.com/codderv006/URL-shortner-FAST-API">https://github.com/codderv006/URL-shortner-FAST-API</a></li><li><b>Diabetes Predictor</b>: ML diabetes-risk app. Stack: Python, ML. Shows: Data & analytics. <a href="https://github.com/codderv006/Diabetes-Predictor-App">https://github.com/codderv006/Diabetes-Predictor-App</a></li><li><b>Mobile Market Analysis, India</b>: Power BI dashboard on Flipkart phone listings. Stack: Power BI. Shows: Data & analytics, Product management. <a href="https://drive.google.com/file/d/1fvwU3erGI_JJwvk6pQ4RTKt9oUqhwfRZ/view">https://drive.google.com/file/d/1fvwU3erGI_JJwvk6pQ4RTKt9oUqhwfRZ/view</a></li><li><b>Mood-Based Movie Recommender</b>: Recommendations from a Snowflake warehouse. Stack: Snowflake, SQL, Streamlit. Shows: Data & analytics, Full-stack. <a href="https://github.com/codderv006/movieRec-snowflake">https://github.com/codderv006/movieRec-snowflake</a></li><li><b>IBM HR Attrition Analysis</b>: Tableau attrition dashboard. Stack: Tableau. Shows: Data & analytics, Founder's Office. <a href="https://public.tableau.com/views/HRAnalyticsEmployeeAttritionPerformance_17494550482680/Dashboard1">https://public.tableau.com/views/HRAnalyticsEmployeeAttritionPerformance_17494550482680/Dashboard1</a></li><li><b>Slango</b>: Slang simplifier. Stack: C++. <a href="https://github.com/codderv006/Slango-a-Slang-Simplifier">https://github.com/codderv006/Slango-a-Slang-Simplifier</a></li><li><b>Blender by Vedant</b>: 3D art and renders. Stack: Blender. <a href="https://github.com/codderv006/Blender-by-vedant">https://github.com/codderv006/Blender-by-vedant</a></li>
+    </ul>
+    <p>Full profile in plain text: <a href="/llms-full.txt">/llms-full.txt</a></p>
+  </section>
+</noscript>
+    <noscript>
+  <section id="projects-static" style="padding:40px var(--gut,20px);max-width:1160px;margin:0 auto">
+    <h2>Projects</h2>
+    <ul>
+      <li><b>Live Predictions (Tekkers)</b>: Live score forecasts + leaderboard; #1 acquisition driver. Stack: Full-stack, PostHog. Shows: Product management, Product engineering, Full-stack, Data & analytics.</li><li><b>Push + reachouts engine (Tekkers)</b>: Push notifications, reminders, nudges, campaigns. Stack: Backend. Shows: Product engineering, Product management, Full-stack, Founder's Office.</li><li><b>Analytics, minus the analyst (Tekkers)</b>: PostHog funnels, cohorts, DAU/WAU, daily digests. Stack: PostHog. Shows: Data & analytics, Product management, Founder's Office.</li><li><b>Personalised For You feed (Tekkers)</b>: Per-user team feed, live polling. Stack: Mobile, backend. Shows: Product engineering, Full-stack.</li><li><b>Girega Ya Nahi</b>: Predicts when a biscuit breaks in chai: 10-stage physics pipeline, 5,000-run Monte Carlo, Bayesian learning. Stack: Next.js, TypeScript, Gemini. Shows: Product engineering, Full-stack, Data & analytics. <a href="https://github.com/codderv006/girega-ya-nahi">https://github.com/codderv006/girega-ya-nahi</a></li><li><b>The Football Data Dilemma</b>: Player analysis to build a profitable team — Datazen Datathon 1st place. Stack: Python. Shows: Data & analytics, Product management. <a href="https://github.com/codderv006/GFC-datathon">https://github.com/codderv006/GFC-datathon</a></li><li><b>Quick Fill</b>: Book CNG station slots by live availability — DevIgnite Hackathon 1st place. Stack: Flutter, Dart. Shows: Product engineering, Product management, Full-stack. <a href="https://github.com/codderv006/DevIgnite-24-Quick-Fill-GFC01">https://github.com/codderv006/DevIgnite-24-Quick-Fill-GFC01</a></li><li><b>Janhit Mitra</b>: AI grievance platform for citizens and authorities; 100+ user pilot, 40% faster submissions. Stack: Flutter, Firebase, Botpress. Shows: Product management, Product engineering, Founder's Office. <a href="https://github.com/VedantTgithub/mum">https://github.com/VedantTgithub/mum</a></li><li><b>LingoAI</b>: Learn any language with an AI conversation partner. Stack: TypeScript, AI. Shows: Product engineering, Product management. <a href="https://youtu.be/8TLN_rZc90U">https://youtu.be/8TLN_rZc90U</a></li><li><b>Evolve Chargemates</b>: Decentralised EV-charging network (two-sided marketplace); vision, MVP, GTM. Stack: Flutter, Firebase, Maps. Shows: Product management, Founder's Office, Product engineering. <a href="https://youtu.be/b2F9AFB2fgg">https://youtu.be/b2F9AFB2fgg</a></li><li><b>Psychalyzer</b>: Children&#x27;s mental-wellbeing assessment (Smart India Hackathon). Stack: Flutter, ML. Shows: Product engineering, Product management. <a href="https://github.com/codderv006/psychalyzer-001-SIH">https://github.com/codderv006/psychalyzer-001-SIH</a></li><li><b>DSA Visualizer</b>: Step-by-step data structure visualisations. Stack: JavaScript. Shows: Full-stack. <a href="https://github.com/codderv006/DSA-VISUALIZER-TOOL">https://github.com/codderv006/DSA-VISUALIZER-TOOL</a></li><li><b>Cover Letter Generator</b>: AI cover letters via DeepSeek. Stack: React, AI. Shows: Full-stack, Product engineering. <a href="https://cover-letter-generator-deepseek.vercel.app">https://cover-letter-generator-deepseek.vercel.app</a></li><li><b>Mirror</b>: Self-help diary app. Stack: Anvil, Python. Shows: Product engineering. <a href="https://mirror-self-help.anvil.app">https://mirror-self-help.anvil.app</a></li><li><b>Sketchy</b>: Draw in the air with hand tracking. Stack: Python, OpenCV, MediaPipe. Shows: Product engineering. <a href="https://github.com/codderv006/sketchy">https://github.com/codderv006/sketchy</a></li><li><b>Data Analysis Playground</b>: Upload data, write Python, see results live. Stack: Streamlit, Pandas. Shows: Data & analytics, Full-stack. <a href="https://data-analysis-playground.streamlit.app">https://data-analysis-playground.streamlit.app</a></li><li><b>NLP Visualizer</b>: Learn NLP concepts visually. Stack: JavaScript. Shows: Full-stack. <a href="https://nlpviz-qvao.onrender.com/">https://nlpviz-qvao.onrender.com/</a></li><li><b>Feeldot</b>: LLM chat app on open-source models. Stack: Python, LLM. Shows: Full-stack, Product engineering. <a href="https://github.com/codderv006/LLM-ChatBot">https://github.com/codderv006/LLM-ChatBot</a></li><li><b>Text to Handwriting</b>: Typed text rendered as handwriting on A4. Stack: Python, Pillow. Shows: Product engineering. <a href="https://github.com/codderv006/Text-to-Handwriting-python">https://github.com/codderv006/Text-to-Handwriting-python</a></li><li><b>FastAPI URL Shortener</b>: Minimal link shortener. Stack: Python, FastAPI. Shows: Full-stack. <a href="https://github.com/codderv006/URL-shortner-FAST-API">https://github.com/codderv006/URL-shortner-FAST-API</a></li><li><b>Diabetes Predictor</b>: ML diabetes-risk app. Stack: Python, ML. Shows: Data & analytics. <a href="https://github.com/codderv006/Diabetes-Predictor-App">https://github.com/codderv006/Diabetes-Predictor-App</a></li><li><b>Mobile Market Analysis, India</b>: Power BI dashboard on Flipkart phone listings. Stack: Power BI. Shows: Data & analytics, Product management. <a href="https://drive.google.com/file/d/1fvwU3erGI_JJwvk6pQ4RTKt9oUqhwfRZ/view">https://drive.google.com/file/d/1fvwU3erGI_JJwvk6pQ4RTKt9oUqhwfRZ/view</a></li><li><b>Mood-Based Movie Recommender</b>: Recommendations from a Snowflake warehouse. Stack: Snowflake, SQL, Streamlit. Shows: Data & analytics, Full-stack. <a href="https://github.com/codderv006/movieRec-snowflake">https://github.com/codderv006/movieRec-snowflake</a></li><li><b>IBM HR Attrition Analysis</b>: Tableau attrition dashboard. Stack: Tableau. Shows: Data & analytics, Founder's Office. <a href="https://public.tableau.com/views/HRAnalyticsEmployeeAttritionPerformance_17494550482680/Dashboard1">https://public.tableau.com/views/HRAnalyticsEmployeeAttritionPerformance_17494550482680/Dashboard1</a></li><li><b>Slango</b>: Slang simplifier. Stack: C++. <a href="https://github.com/codderv006/Slango-a-Slang-Simplifier">https://github.com/codderv006/Slango-a-Slang-Simplifier</a></li><li><b>Blender by Vedant</b>: 3D art and renders. Stack: Blender. <a href="https://github.com/codderv006/Blender-by-vedant">https://github.com/codderv006/Blender-by-vedant</a></li>
+    </ul>
+    <p>Full profile in plain text: <a href="/llms-full.txt">/llms-full.txt</a></p>
+  </section>
+</noscript>
+  </div>
+</section>
+
+<!-- ============ EDUCATION ============ -->
+<section id="education">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="label" data-r style="color:var(--peach)"><i></i>Education &amp; wins</span>
+      <h2 data-r data-q="Receipts. 🧾">The paper trail.</h2></div>
+    </div>
+    <div class="edu-grid">
+      <div class="panel" data-r>
+        <h3 style="color:var(--mint)">Education</h3>
+        <div class="big-stat">9.56</div>
+        <p style="color:var(--grey3);font-size:15px;margin:6px 0 18px">CGPA · B.E. Computer Engineering, VESIT Mumbai (2021 – 25)</p>
+        <ul>
+          <li><div><b>HSC · 12th</b>98.87%</div><span>2021</span></li>
+          <li><div><b>SSC · 10th</b>94.20%</div><span>2019</span></li>
+        </ul>
+      </div>
+      <div class="panel" data-r style="transition-delay:.1s">
+        <h3 style="color:var(--lav)">Wins</h3>
+        <ul>
+          <li><div><b>DevIgnite Hackathon · 1st</b>SIGE, Mumbai</div><span>Mar 2024</span></li>
+          <li><div><b>Datazen Datathon · 1st</b>KJSCOE, Mumbai</div><span>Feb 2024</span></li>
+          <li><div><b>J.P. Morgan Code for Good</b>Top 6 from VESIT</div><span>Jul 2024</span></li>
+        </ul>
+      </div>
+      <div class="panel" data-r style="transition-delay:.2s">
+        <h3 style="color:var(--peach)">Certifications</h3>
+        <div class="certs">
+          <span>NVIDIA DLI · Deep Learning</span>
+          <a href="https://www.cloudskillsboost.google/public_profiles/fa08eea8-ab1c-46d0-a32a-ab64e9a22c2c" target="_blank" rel="noopener">Google Cloud Foundations</a>
+          <a href="https://www.cloudskillsboost.google/public_profiles/fa08eea8-ab1c-46d0-a32a-ab64e9a22c2c/badges/5506012" target="_blank" rel="noopener">Intro to LLMs</a>
+          <a href="https://freecodecamp.org/certification/VedantxTime/data-analysis-with-python-v7" target="_blank" rel="noopener">Data Analysis with Python</a>
+          <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Tata/MyXvBcppsW2FkNYCX_Tata_FRnyptXYCjZXx2uRt_1703572448207_completion_certificate.pdf" target="_blank" rel="noopener">Tata · Data Visualisation</a>
+          <a href="https://www.credly.com/badges/e511cbd0-f5c9-48fd-97f9-bbb9e92efe1c/public_url" target="_blank" rel="noopener">Cisco Networking Basics</a>
+          <a href="https://www.udemy.com/certificate/UC-fd0cb4cd-01cc-4652-af2d-699cd569d13e/" target="_blank" rel="noopener">Software Testing Bootcamp</a>
+          <span>Python for Everybody</span><span>EDA with Seaborn</span><span>Intro to ML · Kaggle</span><span>Intro to R</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONNECT ============ -->
+<section id="connect">
+  <div class="wrap connect-inner">
+    <span class="label" data-r style="color:var(--pink);justify-content:center"><i></i>Connect</span>
+    <h2 data-r data-q="Still scrolling?<br><em>That's a sign.</em>">Got a messy problem?<br><em>Let's build.</em></h2>
+    <a class="email" data-r href="mailto:hello.vedantp@gmail.com">hello.vedantp@gmail.com <svg width="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+    <div class="socials" data-r>
+      <a href="https://www.linkedin.com/in/vedant-pawar/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/codderv006" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://twitter.com/Vedant52455825" target="_blank" rel="noopener">X / Twitter</a>
+      <a href="https://www.instagram.com/vedant.time/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://youtube.com/@vedantpawar.1645" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://www.kaggle.com/vedantxtime" target="_blank" rel="noopener">Kaggle</a>
+      <a href="https://codepen.io/codderv006" target="_blank" rel="noopener">CodePen</a>
+    </div>
+  </div>
+  <div class="horizon" aria-hidden="true">
+    <svg viewBox="0 0 1600 400" id="horizon">
+      <defs>
+        <linearGradient id="hz" x1="0" x2="1"><stop offset="0" stop-color="#ffcbb3" stop-opacity="0"/><stop offset=".3" stop-color="#ffbddb"/><stop offset=".5" stop-color="#c9b8ff"/><stop offset=".7" stop-color="#a9d6ff"/><stop offset="1" stop-color="#a9d6ff" stop-opacity="0"/></linearGradient>
+        <radialGradient id="hglow" cx=".5" cy="1" r=".6"><stop offset="0" stop-color="#c9b8ff" stop-opacity=".25"/><stop offset="1" stop-color="#c9b8ff" stop-opacity="0"/></radialGradient>
+      </defs>
+      <ellipse cx="800" cy="900" rx="900" ry="700" fill="url(#hglow)"/>
+      <path id="hzArc" d="M-100 400Q800 40 1700 400" fill="#050507" stroke="url(#hz)" stroke-width="1.6" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>
+      <path d="M200 400Q800 140 1400 400" fill="none" stroke="#1d1d25" stroke-width="1"/>
+      <path d="M420 400Q800 230 1180 400" fill="none" stroke="#1d1d25" stroke-width="1"/>
+    </svg>
+  </div>
+</section>
+</main>
+
+<footer><span data-q="Built by me, obviously. Quirky mode included.">Made with time, keep moving and rising.</span> <b>© Vedant Pawar 2026</b></footer>
+<div class="toast" role="status" aria-live="polite"></div>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo" aria-hidden="true">
+  <button class="lb-close" id="lbClose" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M4 4l16 16M20 4L4 20"/></svg></button>
+  <img id="lbImg" alt="">
+</div>
+<div class="bh" id="bh" aria-hidden="true"><span class="halo"></span><span class="disk"></span><span class="core"></span><span class="ripple"></span><span class="flash"></span></div>
+
+<script src="favorites.js"></script>
+<script>
+(() => {
+  const $ = (s, c = document) => c.querySelector(s);
+  const $$ = (s, c = document) => [...c.querySelectorAll(s)];
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const fine = matchMedia('(pointer: fine)').matches;
+
+  /* ---------- projects data ---------- */
+  const CATS = {
+    work:     { name: 'At Tekkers',         c: 'var(--sky)' },
+    latest:   { name: 'Latest',             c: 'var(--lav)' },
+    hack:     { name: 'Hackathons',         c: 'var(--peach)' },
+    cause:    { name: 'Built with a cause', c: 'var(--mint)' },
+    academic: { name: 'Academic',           c: 'var(--sky)' },
+    data:     { name: 'Data',               c: 'var(--pink)' },
+  };
+  const ROLES = {
+    any:  'Everything',
+    pe:   'Product engineering',
+    pm:   'Product management',
+    data: 'Data & analytics',
+    fs:   'Full-stack',
+    fo:   "Founder's Office",
+  };
+  const gh = r => 'https://github.com/codderv006/' + r;
+  // r = roles this project proves, strongest first · why = one line per role
+  const P = [
+    { cat: 'latest', badge: 'new', title: 'Girega Ya Nahi', desc: 'Snap a Parle-G and your chai. A 10-stage physics pipeline with Monte Carlo and Bayesian learning predicts the second it breaks. Useless problem, real engineering.', tags: ['Next.js', 'TypeScript', 'Gemini', 'Physics'], links: [['repo', gh('girega-ya-nahi')], ['live', 'https://girega-ya-nahi-liart.vercel.app']],
+      r: ['pe', 'fs', 'data'], why: { pe: '10-stage pipeline, unit-tested and reproducible.', fs: 'Next.js app with a streaming API and share cards.', data: 'Monte Carlo + Bayesian learning from real outcomes.' } },
+    { cat: 'latest', badge: 'new · Bolna hackathon', title: 'Saathi', desc: 'A voice guide that helps older parents use everyday apps themselves, one step at a time, in English and Marathi. First flow: booking an Ola, Uber or Rapido ride, from a fresh install.', tags: ['Flutter', 'Bolna voice AI', 'Firebase', 'Node.js'], links: [],
+      r: ['pm', 'pe', 'fs'], why: { pm: 'Designed for older users: it explains and waits, never taps or pays for them.', pe: 'Live voice agent inside a Flutter app, device-tested in Marathi.', fs: 'Flutter app, Node session server, Firestore with tested rules.' } },
+    { cat: 'work', badge: 'production', title: 'Live Predictions', desc: 'Score forecasts, a live leaderboard and check-in gating for fans during real matches.', tags: ['Product', 'Full-stack', 'PostHog'], links: [],
+      r: ['pm', 'pe', 'fs', 'data'], why: { pm: 'Scoped with no spec. Became the #1 acquisition driver in weeks.', pe: 'Designed, built and shipped solo, end to end.', fs: 'Data model, backend, UI and deploy, all mine.', data: 'Tracked adoption in PostHog to steer each iteration.' } },
+    { cat: 'work', badge: 'production', title: 'Push + reachouts engine', desc: 'Push notifications from scratch, plus reminders, invite nudges and fill-the-spots campaigns for venues.', tags: ['Backend', 'Retention'], links: [],
+      r: ['pe', 'pm', 'fs', 'fo'], why: { pe: 'Architected the pipeline, routing and a low-latency schema.', pm: 'Built the retention loop: reminders and nudges.', fs: 'Backend pipeline through to in-app UI.', fo: 'Ran user reachouts as a system, not a spreadsheet.' } },
+    { cat: 'work', badge: 'production', title: 'Analytics, minus the analyst', desc: 'PostHog across 17 screens: funnels, cohorts, DAU/WAU, plus automated daily digests for the team.', tags: ['PostHog', 'Funnels', 'Cohorts'], links: [],
+      r: ['data', 'pm', 'fo'], why: { data: 'Set up tracking, funnels and cohorts from zero.', pm: 'Turned usage data into product decisions.', fo: 'Gave the whole team daily visibility.' } },
+    { cat: 'work', badge: 'production', title: 'Personalised For You feed', desc: 'A feed tailored to each fan\'s teams: single bootstrap + 30s live polling, every iOS and Android edge case handled.', tags: ['Architecture', 'Mobile'], links: [],
+      r: ['pe', 'fs'], why: { pe: 'Owned the architecture and edge cases solo.', fs: 'Client and server, both platforms.' } },
+    { cat: 'hack', badge: '🏆 Datazen · 1st', title: 'The Football Data Dilemma', desc: 'Player analysis and visualisations to build a strong, profitable team.', tags: ['Python', 'Analytics'], links: [['repo', gh('GFC-datathon')]],
+      r: ['data', 'pm'], why: { data: 'Won 1st with player analysis and visuals.', pm: 'Framed a business decision with data.' } },
+    { cat: 'hack', badge: '🏆 DevIgnite · 1st', title: 'Quick Fill', desc: 'Find and book CNG station slots based on live availability.', tags: ['Flutter', 'Dart'], links: [['repo', gh('DevIgnite-24-Quick-Fill-GFC01')]],
+      r: ['pe', 'pm', 'fs'], why: { pe: 'A working booking app in 24 hours. Won 1st.', pm: 'Spotted a real pain point: CNG queues.', fs: 'App + backend inside a hackathon.' } },
+    { cat: 'hack', title: 'Janhit Mitra', desc: 'AI grievance platform connecting citizens and authorities. Piloted with 100+ users.', tags: ['Flutter', 'Firebase', 'Botpress'], links: [['repo', 'https://github.com/VedantTgithub/mum'], ['demo', 'https://www.youtube.com/watch?v=1IosJY7mh8o']],
+      r: ['pm', 'pe', 'fo'], why: { pm: 'Designed the flow. 100+ user pilot, 40% faster submissions.', pe: 'AI chatbot + app, end to end.', fo: 'Took it to a real pilot with authorities.' } },
+    { cat: 'hack', title: 'LingoAI', desc: 'Speak and learn any language with an AI conversation partner.', tags: ['TypeScript', 'AI'], links: [['demo', 'https://youtu.be/8TLN_rZc90U']],
+      r: ['pe', 'pm'], why: { pe: 'An AI conversation product, built fast.', pm: 'Built around a learner\'s real daily loop.' } },
+    { cat: 'academic', badge: 'final year', title: 'Evolve Chargemates', desc: 'A decentralised EV-charging network: list your plug point, others book it.', tags: ['Flutter', 'Firebase', 'Maps'], links: [['demo', 'https://youtu.be/b2F9AFB2fgg']],
+      r: ['pm', 'fo', 'pe'], why: { pm: 'Defined the vision, MVP and two-sided go-to-market.', fo: 'Founder rehearsal: problem to validated MVP.', pe: 'Flutter, maps and live bookings.' } },
+    { cat: 'academic', badge: 'SIH', title: 'Psychalyzer', desc: 'Monitors, assesses and tracks the mental wellbeing of young children.', tags: ['Flutter', 'ML'], links: [['repo', gh('psychalyzer-001-SIH')]],
+      r: ['pe', 'pm'], why: { pe: 'Smart India Hackathon build with ML assessment.', pm: 'Designed for parents, teachers and kids at once.' } },
+    { cat: 'academic', title: 'DSA Visualizer', desc: 'Watch data structures and algorithms work, step by step.', tags: ['JavaScript'], links: [['repo', gh('DSA-VISUALIZER-TOOL')]],
+      r: ['fs'], why: { fs: 'Interactive visualisations in plain JavaScript.' } },
+    { cat: 'cause', title: 'Cover Letter Generator', desc: 'Professional cover letters in seconds, powered by DeepSeek.', tags: ['React', 'AI'], links: [['repo', gh('Cover-letter-generator-Deepseek')], ['live', 'https://cover-letter-generator-deepseek.vercel.app']],
+      r: ['fs', 'pe'], why: { fs: 'React app on an LLM backend.', pe: 'Shipped and live.' } },
+    { cat: 'cause', title: 'Mirror', desc: 'A self-help diary that helps you calm down.', tags: ['Anvil', 'Python'], links: [['live', 'https://mirror-self-help.anvil.app']],
+      r: ['pe'], why: { pe: 'Shipped a live product for a personal need.' } },
+    { cat: 'cause', title: 'Sketchy', desc: 'Draw in the air with your finger. Hand tracking with OpenCV and MediaPipe.', tags: ['Python', 'OpenCV'], links: [['repo', gh('sketchy')]],
+      r: ['pe'], why: { pe: 'Computer-vision prototype, built for fun.' } },
+    { cat: 'cause', title: 'Data Analysis Playground', desc: 'Upload a dataset, write Python, see results live.', tags: ['Streamlit', 'Pandas'], links: [['repo', gh('Data-Analysis-Playground')], ['live', 'https://data-analysis-playground.streamlit.app']],
+      r: ['data', 'fs'], why: { data: 'A tool for analysts, built by one.', fs: 'Streamlit app, deployed.' } },
+    { cat: 'cause', title: 'NLP Visualizer', desc: 'Learn core NLP concepts through visuals.', tags: ['JavaScript', 'NLP'], links: [['live', 'https://nlpviz-qvao.onrender.com/']],
+      r: ['fs'], why: { fs: 'Deployed educational web app.' } },
+    { cat: 'cause', title: 'Feeldot', desc: 'An LLM chat app on open-source models, no API costs.', tags: ['Python', 'LLM'], links: [['repo', gh('LLM-ChatBot')]],
+      r: ['fs', 'pe'], why: { fs: 'LLM chat app on open models.', pe: 'Zero API cost, by design.' } },
+    { cat: 'cause', title: 'Slango', desc: 'Slang, simplified.', tags: ['C++'], links: [['repo', gh('Slango-a-Slang-Simplifier')]], r: [], why: {} },
+    { cat: 'cause', title: 'Text to Handwriting', desc: 'Turns typed text into handwriting on an A4 page.', tags: ['Python', 'Pillow'], links: [['repo', gh('Text-to-Handwriting-python')]],
+      r: ['pe'], why: { pe: 'An image-rendering pipeline in Python.' } },
+    { cat: 'cause', title: 'FastAPI URL Shortener', desc: 'A minimal, fast link shortener.', tags: ['Python', 'FastAPI'], links: [['repo', gh('URL-shortner-FAST-API')]],
+      r: ['fs'], why: { fs: 'A clean FastAPI backend.' } },
+    { cat: 'cause', title: 'Diabetes Predictor', desc: 'An ML app that estimates diabetes risk.', tags: ['Python', 'ML'], links: [['repo', gh('Diabetes-Predictor-App')]],
+      r: ['data'], why: { data: 'An ML model wrapped in an app.' } },
+    { cat: 'cause', title: 'Blender by Vedant', desc: '3D art and renders, made for the joy of it.', tags: ['Blender'], links: [['repo', gh('Blender-by-vedant')]], r: [], why: {} },
+    { cat: 'data', title: 'Mobile Market Analysis, India', desc: 'Power BI dashboard on Flipkart listings: brands, pricing segments, specs and ratings.', tags: ['Power BI'], links: [['view', 'https://drive.google.com/file/d/1fvwU3erGI_JJwvk6pQ4RTKt9oUqhwfRZ/view?usp=drive_link']],
+      r: ['data', 'pm'], why: { data: 'Power BI end to end: clean, model, visualise.', pm: 'Pricing and positioning insights for a market.' } },
+    { cat: 'data', title: 'Mood-Based Movie Recommender', desc: 'Recommendations served from a Snowflake warehouse with optimised SQL views and procedures.', tags: ['Snowflake', 'SQL', 'Streamlit'], links: [['repo', gh('movieRec-snowflake')]],
+      r: ['data', 'fs'], why: { data: 'Snowflake SQL views and procedures.', fs: 'Streamlit front end on a warehouse.' } },
+    { cat: 'data', title: 'IBM HR Attrition Analysis', desc: 'Tableau dashboard that surfaces employee attrition patterns.', tags: ['Tableau'], links: [['view', 'https://public.tableau.com/views/HRAnalyticsEmployeeAttritionPerformance_17494550482680/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link']],
+      r: ['data', 'fo'], why: { data: 'Tableau KPIs on attrition.', fo: 'People-ops insight for hiring and retention.' } },
+  ];
+  P.forEach((p, i) => p.i = i);
+  const ART = {
+    work:     '<rect x="35" y="45" width="80" height="60" rx="8"/><path d="M60 45V33h30v12M35 72h80"/>',
+    latest:   '<circle cx="75" cy="75" r="30"/><ellipse cx="75" cy="75" rx="62" ry="16" transform="rotate(-20 75 75)"/>',
+    hack:     '<path d="M75 20l12 36h38l-31 22 12 36-31-22-31 22 12-36-31-22h38z"/>',
+    cause:    '<circle cx="75" cy="75" r="20"/><circle cx="75" cy="75" r="40"/><circle cx="75" cy="75" r="60"/>',
+    academic: '<path d="M20 110L75 30l55 80z"/><path d="M47 70h56"/>',
+    data:     '<path d="M20 120V80M50 120V50M80 120V70M110 120V30"/><path d="M20 70L50 40l30 20 30-40"/>',
+  };
+  const grid = $('#grid'), tabs = $('#tabs'), lens = $('#lens'), lensNote = $('#lensNote');
+  let role = 'any', cur = 'all', expanded = false;
+  const score = p => role === 'any' ? 0 : (p.r.indexOf(role) < 0 ? 0 : 10 - p.r.indexOf(role));
+  const ordered = () => role === 'any'
+    ? P.slice()
+    : P.slice().sort((a, b) => (score(b) - score(a)) || (a.i - b.i));
+  const card = (p, first) => {
+    const fit = role !== 'any' && score(p) > 0;
+    return `
+    <article class="pc${first ? ' feat' : ''}${fit ? ' fit' : ''}${role !== 'any' && !fit ? ' dim' : ''}" data-cat="${p.cat}" style="--c:${CATS[p.cat].c}">
+      <svg class="art" viewBox="0 0 150 150" aria-hidden="true">${ART[p.cat]}</svg>
+      <div class="top"><span class="cat">${CATS[p.cat].name}</span>${p.badge ? `<span class="badge">${p.badge}</span>` : ''}</div>
+      <h3>${p.title}</h3><p>${p.desc}</p>
+      ${fit && p.why[role] ? `<p class="why"><span>✦ ${ROLES[role]}</span>${p.why[role]}</p>` : ''}
+      <div class="tags">${p.tags.map(t => `<span>${t}</span>`).join('')}</div>
+      ${p.links.length ? `<div class="links">${p.links.map(([l, u]) => `<a href="${u}" target="_blank" rel="noopener">${l} ↗</a>`).join('')}</div>` : ''}
+    </article>`;
+  };
+  const counts = () => {
+    const vis = role === 'any' ? P : P.filter(p => score(p) > 0);
+    return vis.reduce((a, p) => (a[p.cat] = (a[p.cat] || 0) + 1, a), { all: P.length });
+  };
+  const drawTabs = () => {
+    const c = counts();
+    tabs.innerHTML = [['all', 'All'], ...Object.entries(CATS).map(([k, v]) => [k, v.name])]
+      .map(([k, n]) => `<button class="tab${k === cur ? ' on' : ''}" role="tab" data-k="${k}" aria-selected="${k === cur}">${n}<span class="n">${c[k] || 0}</span></button>`).join('');
+  };
+  lens.innerHTML = `<span class="lens-l">Hiring for</span>` + Object.entries(ROLES)
+    .map(([k, n]) => `<button class="lchip${k === role ? ' on' : ''}" data-role="${k}" aria-pressed="${k === role}">${n}</button>`).join('');
+  const LIMIT = () => innerWidth < 640 ? 5 : 8;
+  const render = (animate) => {
+    const list = ordered().filter(p => cur === 'all' || p.cat === cur);
+    grid.innerHTML = list.map((p, i) => card(p, i === 0 && cur === 'all')).join('');
+    const cards = $$('.pc', grid);
+    cards.forEach((c, i) => {
+      c.classList.add('in');
+      c.classList.toggle('more', !expanded && i >= LIMIT());
+      if (animate && !reduce && !c.classList.contains('more')) { c.style.opacity = 0; c.style.transform = 'translateY(16px)'; setTimeout(() => { c.style.opacity = ''; c.style.transform = ''; }, 30 + i * 30); }
+    });
+    const hidden = cards.length - LIMIT();
+    $('#showmore').hidden = hidden <= 0;
+    $('#moreBtn').textContent = expanded ? 'Show less ↑' : `Show ${hidden} more ↓`;
+    const n = P.filter(p => score(p) > 0).length;
+    lensNote.innerHTML = role === 'any' ? '' : `<b>${n} projects</b> prove ${ROLES[role].toLowerCase()} skills. They're up top, with why. <button id="copyLens">Copy link to this view</button>`;
+    const cl = $('#copyLens');
+    if (cl) cl.addEventListener('click', () => {
+      const u = location.href.split('#')[0];
+      (navigator.clipboard ? navigator.clipboard.writeText(u + '#projects') : Promise.reject()).then(() => toast('link copied 🔗'), () => toast(u));
+    });
+  };
+  const setRole = (k, animate) => {
+    role = ROLES[k] ? k : 'any'; expanded = false;
+    $$('.lchip', lens).forEach(b => { const on = b.dataset.role === role; b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); });
+    drawTabs(); render(animate);
+    try {
+      const u = new URL(location.href);
+      role === 'any' ? u.searchParams.delete('for') : u.searchParams.set('for', role);
+      history.replaceState(null, '', u.pathname + u.search + u.hash);
+    } catch (e) {}
+  };
+  lens.addEventListener('click', e => { const b = e.target.closest('.lchip'); if (b) setRole(b.dataset.role, true); });
+  tabs.addEventListener('click', e => {
+    const b = e.target.closest('.tab'); if (!b) return;
+    cur = b.dataset.k; expanded = false; drawTabs(); render(true);
+  });
+  $('#moreBtn').addEventListener('click', () => {
+    expanded = !expanded; render(expanded);
+    if (!expanded) $('#projects').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
+  });
+  let startRole = 'any';
+  try { startRole = new URLSearchParams(location.search).get('for') || 'any'; } catch (e) {}
+  setRole(startRole, false);
+  // spotlight follows the mouse inside cards
+  grid.addEventListener('pointermove', e => {
+    const c = e.target.closest('.pc'); if (!c) return;
+    const r = c.getBoundingClientRect();
+    c.style.setProperty('--mx', (e.clientX - r.left) + 'px'); c.style.setProperty('--my', (e.clientY - r.top) + 'px');
+  });
+
+  /* ---------- favourites ---------- */
+  const favs = (window.FAVS || []).filter(Boolean).map(f => f.split('|')[0].trim());
+  if (favs.length) {
+    $('#favourites').hidden = false;
+    const strip = $('#favStrip');
+    const fig = (f, i, clone) => `<figure class="fav"${clone ? ' aria-hidden="true"' : ''}><img src="assets/favorites/${f}" alt="${clone ? '' : 'Favourite moment ' + (i + 1)}" loading="eager" draggable="false"></figure>`;
+    // original set + two clones so the loop never shows an edge
+    strip.innerHTML = favs.map((f, i) => fig(f, i, false)).join('') + favs.map((f, i) => fig(f, i, true)).join('') + favs.map((f, i) => fig(f, i, true)).join('');
+    $$('.fav', strip).forEach((f, i) => {
+      if (i < favs.length) { f.tabIndex = 0; f.setAttribute('role', 'button'); f.setAttribute('aria-label', 'Open photo ' + (i + 1)); }
+      else f.tabIndex = -1;
+    });
+    // width of one full set (first clone's offset minus first original's)
+    let setW = 0;
+    const measure = () => { const a = strip.children[0], b = strip.children[favs.length]; setW = b ? b.offsetLeft - a.offsetLeft : 0; };
+    const wrap = () => {
+      if (!setW) return;
+      if (strip.scrollLeft >= setW * 2) strip.scrollLeft -= setW;
+      else if (strip.scrollLeft < setW * .5) strip.scrollLeft += setW;
+    };
+    // lightbox
+    const lb = $('#lightbox'), lbImg = $('#lbImg');
+    let lastFocus = null;
+    const openLb = img => { lastFocus = document.activeElement; lbImg.src = img.src; lbImg.alt = img.alt || 'Favourite moment'; lb.classList.add('open'); lb.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden'; $('#lbClose').focus(); hold = true; };
+    const closeLb = () => { if (!lb.classList.contains('open')) return; lb.classList.remove('open'); lb.setAttribute('aria-hidden', 'true'); document.body.style.overflow = ''; lastFocus && lastFocus.focus && lastFocus.focus(); hold = false; resumeSoon(); };
+    $('#lbClose').addEventListener('click', closeLb);
+    lb.addEventListener('click', e => { if (e.target !== lbImg) closeLb(); });
+    addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
+    // infinite auto-glide
+    const SPEED = innerWidth < 640 ? 0.45 : 0.6; // px per frame
+    let paused = false, hold = false, visible = false, resumeT = null, acc = 0;
+    function resumeSoon(ms = 2500) { clearTimeout(resumeT); paused = true; resumeT = setTimeout(() => { paused = false; }, ms); }
+    const tick = () => {
+      if (!paused && !hold && visible && !reduce && setW) {
+        acc += SPEED;
+        if (acc >= 1) { const step = Math.floor(acc); acc -= step; strip.scrollLeft += step; wrap(); }
+      }
+      requestAnimationFrame(tick);
+    };
+    // hand scroll: native swipe on touch, drag with mouse
+    let down = false, sx = 0, sl = 0, moved = 0;
+    strip.addEventListener('pointerdown', e => { down = true; moved = 0; sx = e.clientX; sl = strip.scrollLeft; paused = true; clearTimeout(resumeT); if (e.pointerType === 'mouse') strip.style.cursor = 'grabbing'; });
+    addEventListener('pointermove', e => {
+      if (!down) return;
+      moved = Math.max(moved, Math.abs(e.clientX - sx));
+      if (e.pointerType === 'mouse') { strip.scrollLeft = sl - (e.clientX - sx); if (strip.scrollLeft >= setW * 2 || strip.scrollLeft < setW * .5) { wrap(); sl = strip.scrollLeft + (e.clientX - sx); } }
+    });
+    addEventListener('pointerup', () => { if (!down) return; down = false; strip.style.cursor = ''; resumeSoon(); });
+    strip.addEventListener('scroll', () => { if (down || paused) wrap(); }, { passive: true });
+    strip.addEventListener('wheel', () => resumeSoon(), { passive: true });
+    strip.addEventListener('touchstart', () => { paused = true; clearTimeout(resumeT); }, { passive: true });
+    strip.addEventListener('touchend', () => resumeSoon(), { passive: true });
+    if (fine) { strip.addEventListener('mouseenter', () => { paused = true; clearTimeout(resumeT); }); strip.addEventListener('mouseleave', () => { if (!down) resumeSoon(600); }); }
+    strip.addEventListener('click', e => { const f = e.target.closest('.fav'); if (!f || moved > 6) return; openLb(f.querySelector('img')); });
+    strip.addEventListener('keydown', e => { if (e.key === 'Enter' && e.target.closest('.fav')) openLb(e.target.closest('.fav').querySelector('img')); });
+    new IntersectionObserver(es => es.forEach(e => { visible = e.isIntersecting; }), { threshold: .1 }).observe(strip);
+    const start = () => { measure(); strip.scrollLeft = setW; };
+    $$('img', strip).forEach(img => img.addEventListener('load', () => { const pos = strip.scrollLeft - setW; measure(); strip.scrollLeft = setW + Math.max(0, pos); }, { once: true }));
+    addEventListener('resize', () => { measure(); wrap(); });
+    start(); requestAnimationFrame(tick);
+  }
+
+  /* ---------- reveal ---------- */
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12, rootMargin: '0px 0px -50px 0px' });
+  $$('[data-r], .pc').forEach(el => { if (!el.hasAttribute('data-r')) el.setAttribute('data-r', ''); io.observe(el); });
+  requestAnimationFrame(() => $('#heroGrid').classList.add('ready'));
+
+  /* ---------- starfield with depth parallax ---------- */
+  const cv = $('#sky'), ctx = cv.getContext('2d');
+  const dpr = Math.min(2, devicePixelRatio || 1);
+  let W, H, stars = [];
+  const TINTS = ['255,255,255', '201,184,255', '169,214,255', '255,203,179'];
+  const build = () => {
+    W = innerWidth; H = innerHeight; cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const n = Math.round(W * H / 4200);
+    stars = Array.from({ length: n }, () => {
+      const z = Math.random();
+      return { x: Math.random() * W, y: Math.random() * H, z, r: .3 + z * 1.3, a: .2 + z * .6, t: Math.random() * 6,
+               tint: Math.random() < .12 ? TINTS[1 + (Math.random() * 3 | 0)] : TINTS[0] };
+    });
+  };
+  let sy = 0, mx = 0, my = 0, tmx = 0, tmy = 0;
+  window.__pull = 0; // 0 = normal, 1 = all stars swallowed
+  const frame = (t) => {
+    ctx.clearRect(0, 0, W, H);
+    mx += (tmx - mx) * .05; my += (tmy - my) * .05;
+    for (const s of stars) {
+      const sp = .04 + s.z * .22; // nearer stars move faster
+      let y = (s.y - sy * sp) % H; if (y < 0) y += H;
+      let x = s.x + mx * s.z * 18, yy = y + my * s.z * 18;
+      const pl = window.__pull;
+      if (pl > 0) {
+        const cx = W / 2, cy = H / 2, dx = x - cx, dy = yy - cy;
+        const k = Math.min(1, pl * (1.15 - s.z * .3));
+        const a = Math.atan2(dy, dx) + k * k * 4, d = Math.hypot(dx, dy) * (1 - k);
+        x = cx + Math.cos(a) * d; yy = cy + Math.sin(a) * d;
+      }
+      const tw = reduce ? s.a : s.a * (.65 + .35 * Math.sin(t / 1100 + s.t));
+      ctx.fillStyle = `rgba(${s.tint},${tw})`;
+      ctx.beginPath(); ctx.arc(x, yy, s.r, 0, 6.283); ctx.fill();
+    }
+    if (!reduce) requestAnimationFrame(frame);
+  };
+  build(); requestAnimationFrame(frame); addEventListener('resize', build);
+
+  /* ---------- hero mouse parallax ---------- */
+  const layers = $$('.layer');
+  if (fine && !reduce) {
+    addEventListener('mousemove', e => {
+      tmx = e.clientX / innerWidth - .5; tmy = e.clientY / innerHeight - .5;
+      layers.forEach(l => { const d = +l.dataset.depth; l.style.transform = `translate3d(${tmx * d * 34}px, ${tmy * d * 34 + scrollShift * d}px, 0)`; });
+    });
+  }
+
+  /* ---------- scroll: parallax, nav, horizon ---------- */
+  const nav = $('#nav'), hz = $('#hzArc'), speedEls = $$('[data-speed]');
+  let lastY = 0, scrollShift = 0;
+  const onScroll = () => {
+    const y = scrollY; sy = y;
+    nav.classList.toggle('scrolled', y > 20);
+    nav.classList.toggle('hide', y > lastY && y > 300);
+    lastY = y;
+    if (!reduce) {
+      scrollShift = innerWidth < 900 ? 0 : y * .25;
+      layers.forEach(l => { const d = +l.dataset.depth; l.style.transform = `translate3d(${tmx * d * 34}px, ${tmy * d * 34 + scrollShift * d}px, 0)`; });
+      speedEls.forEach(el => { if (innerWidth < 860) { el.style.translate = ''; return; } const r = el.getBoundingClientRect(); el.style.translate = `0 ${(r.top + r.height / 2 - innerHeight / 2) * +el.dataset.speed}px`; });
+      $$('.fav img').forEach(img => { const r = img.parentElement.getBoundingClientRect(); img.style.transform = `translateY(${(r.top / innerHeight) * -30}px)`; });
+    }
+    const r = hz.getBoundingClientRect();
+    const p = Math.min(1, Math.max(0, (innerHeight - r.top) / (innerHeight * .7)));
+    hz.style.strokeDashoffset = 1 - p;
+  };
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+  /* ---------- quirky mode ---------- */
+  const swaps = $$('[data-q]');
+  swaps.forEach(el => el.dataset.f = el.innerHTML);
+  const modeBtn = $('#mode'), toastEl = $('.toast'); let tT;
+  const toast = m => { toastEl.textContent = m; toastEl.classList.add('on'); clearTimeout(tT); tT = setTimeout(() => toastEl.classList.remove('on'), 2200); };
+  const apply = q => {
+    document.documentElement.classList.toggle('quirky', q);
+    modeBtn.setAttribute('aria-pressed', q);
+    swaps.forEach(el => { el.innerHTML = q ? el.dataset.q : el.dataset.f; });
+    try { localStorage.setItem('vp-mode', q ? 'quirky' : 'formal'); } catch (e) {}
+  };
+  const bh = $('#bh'), part = n => $('.' + n, bh);
+  const anim = (el, kf, o) => el.animate(kf, Object.assign({ fill: 'forwards', easing: 'cubic-bezier(.6,0,.4,1)' }, o)).finished;
+  const tween = (from, to, dur, ease = t => t) => new Promise(res => {
+    const t0 = performance.now();
+    const step = t => { const p = Math.min(1, (t - t0) / dur); window.__pull = from + (to - from) * ease(p); p < 1 ? requestAnimationFrame(step) : res(); };
+    requestAnimationFrame(step);
+  });
+  let warping = false;
+  const BLOCKS = '#nav .mark, #nav .navlinks a, #nav .navright > *, .status, h1 .l, .hero-sub, .brag-strip span, .ctas .btn, .try-q, .scene .layer, .scene .sticker, .scroll-cue, .label, h2, .constel, .portrait, .about-copy > p, .looking, .toolkit .row, .xp-row, .bcard, .lens, .lens-note, .tabs, .pc, .showmore, .panel, .email, .socials a, .fav, .sig, footer';
+  const visibleBlocks = () => {
+    const els = $$(BLOCKS).filter(el => {
+      if (!el.offsetParent && getComputedStyle(el).position !== 'fixed') return false;
+      const r = el.getBoundingClientRect();
+      return r.width && r.height && r.bottom > 0 && r.top < innerHeight && r.right > 0 && r.left < innerWidth;
+    });
+    return els.filter(el => !els.some(o => o !== el && o.contains(el)));
+  };
+  const toCenter = el => {
+    const r = el.getBoundingClientRect();
+    return { dx: innerWidth / 2 - (r.left + r.width / 2), dy: innerHeight / 2 - (r.top + r.height / 2) };
+  };
+  const setMode = async (q) => {
+    if (reduce || warping) { apply(q); return; }
+    warping = true;
+    document.body.classList.add('warping');
+    const spin = q ? 1 : -1;
+    const main = $('main'), foot = $('footer');
+
+    // 1) the hole opens at the centre of the screen
+    anim(part('halo'), [{ transform: 'scale(0)' }, { transform: 'scale(1.25)' }], { duration: 900 });
+    anim(part('disk'), [{ transform: 'scale(0) rotate(0)' }, { transform: 'scale(.9) rotate(540deg)' }], { duration: 900 });
+    anim(part('core'), [{ transform: 'scale(0)' }, { transform: 'scale(.85)' }], { duration: 700 });
+    const diskSpin = part('disk').animate([{ rotate: '0deg' }, { rotate: `${spin * 360}deg` }], { duration: 1400, iterations: Infinity });
+
+    // 2) collapse: nearest blocks fall in first, stretched toward the hole (spaghettified) and spiralling
+    const eat = visibleBlocks().map(el => ({ el, ...toCenter(el) }))
+      .sort((m, n) => Math.hypot(m.dx, m.dy) - Math.hypot(n.dx, n.dy));
+    const stepC = Math.min(90, 1300 / Math.max(1, eat.length));
+    const collapseDur = 900;
+    const pullTween = tween(0, 1, 500 + eat.length * stepC + collapseDur * .6, t => t * t);
+    await Promise.all(eat.map(({ el, dx, dy }, i) => {
+      const ang = Math.atan2(dy, dx) * 180 / Math.PI;
+      return anim(el, [
+        { transform: 'none', filter: 'none', opacity: 1 },
+        { transform: `translate(${dx * .25}px,${dy * .25}px) rotate(${spin * 25}deg) scale(1.05,.85)`, filter: 'blur(.5px)', opacity: 1, offset: .35 },
+        { transform: `translate(${dx * .8}px,${dy * .8}px) rotate(${spin * 200}deg) scale(.35,.12)`, filter: 'blur(4px) hue-rotate(90deg)', opacity: .8, offset: .8 },
+        { transform: `translate(${dx}px,${dy}px) rotate(${spin * 380}deg) scale(0)`, filter: 'blur(8px) hue-rotate(180deg)', opacity: 0 },
+      ], { duration: collapseDur, delay: 150 + i * stepC, easing: 'cubic-bezier(.55,0,.9,.4)' });
+    }).concat(pullTween));
+    main.style.opacity = 0; foot.style.opacity = 0;
+
+    // 3) singularity: the hole swells, collapses to a point, then flashes
+    anim(part('halo'), [{ transform: 'scale(1.25)' }, { transform: 'scale(1.6)' }], { duration: 420 });
+    await anim(part('core'), [{ transform: 'scale(.85)' }, { transform: 'scale(1.3)' }, { transform: 'scale(.1)' }], { duration: 520 });
+    eat.forEach(({ el }) => el.getAnimations().forEach(a => a.cancel()));
+    apply(q);
+    anim(part('flash'), [{ transform: 'scale(0)', opacity: 1 }, { transform: 'scale(1)', opacity: .9, offset: .3 }, { transform: 'scale(1.1)', opacity: 0 }], { duration: 800, easing: 'ease-out' });
+    anim(part('ripple'), [{ transform: 'scale(.2)', opacity: 1 }, { transform: 'scale(9)', opacity: 0 }], { duration: 1200, easing: 'cubic-bezier(.2,.7,.2,1)' });
+    // the hole vanishes right after the flash
+    diskSpin.cancel();
+    [part('core'), part('disk'), part('halo')].forEach(el => anim(el, [{ opacity: 1 }, { opacity: 0 }], { duration: 220, easing: 'ease-out' }));
+
+    // 4) rebuild: blocks appear one by one in reading order, flung out from the centre
+    const build = visibleBlocks().map(el => ({ el, ...toCenter(el), r: el.getBoundingClientRect() }))
+      .sort((m, n) => (Math.round(m.r.top / 40) - Math.round(n.r.top / 40)) || (m.r.left - n.r.left));
+    const stepB = Math.min(170, 3200 / Math.max(1, build.length));
+    const buildDur = 1000;
+    const anims = build.map(({ el, dx, dy }, i) => anim(el, [
+      { transform: `translate(${dx}px,${dy}px) rotate(${-spin * 220}deg) scale(0)`, filter: 'blur(10px) hue-rotate(-120deg) saturate(2.5)', opacity: 0 },
+      { transform: `translate(${dx * .15}px,${dy * .15}px) rotate(${-spin * 20}deg) scale(.9,1.1)`, filter: 'blur(1px) hue-rotate(-20deg) saturate(1.6)', opacity: 1, offset: .6 },
+      { transform: `rotate(${spin * 2}deg) scale(1.04)`, filter: 'none', opacity: 1, offset: .82 },
+      { transform: 'none', filter: 'none', opacity: 1 },
+    ], { duration: buildDur, delay: 450 + i * stepB, easing: 'cubic-bezier(.2,.8,.2,1)', fill: 'both' }));
+    main.style.opacity = ''; foot.style.opacity = '';
+    const total = 450 + build.length * stepB + buildDur;
+    tween(1, 0, total * .8, t => 1 - Math.pow(1 - t, 3));
+    await Promise.all(anims);
+    build.forEach(({ el }) => el.getAnimations().forEach(a => a.cancel()));
+    $$('span', bh).forEach(el => el.getAnimations().forEach(a => a.cancel()));
+    document.body.classList.remove('warping');
+    window.__pull = 0; warping = false;
+  };
+  const toggle = ev => {
+    const q = !document.documentElement.classList.contains('quirky');
+    modeBtn.classList.add('seen');
+    setMode(q).then(() => toast(q ? 'survived the black hole. quirky mode: on 🕳️✨' : 'back to business 👔'));
+  };
+  modeBtn.addEventListener('click', toggle);
+  $('#tryQ').addEventListener('click', e => { e.preventDefault(); toggle(e); });
+  let start = false;
+  try { start = /[?&]quirky/.test(location.search) || localStorage.getItem('vp-mode') === 'quirky'; } catch (e) {}
+  if (start) apply(true);
+
+  /* ---------- cursor ---------- */
+  if (fine && !reduce) {
+    const c = $('.cursor'), d = $('.cdot');
+    let x = innerWidth / 2, y = innerHeight / 2, cx = x, cy = y;
+    addEventListener('mousemove', e => { x = e.clientX; y = e.clientY; d.style.transform = `translate(${x}px,${y}px)`; });
+    const loop = () => { cx += (x - cx) * .16; cy += (y - cy) * .16; c.style.transform = `translate(${cx}px,${cy}px)`; requestAnimationFrame(loop); };
+    loop();
+    document.addEventListener('mouseover', e => { if (e.target.closest('a,button,.pc,.fav')) c.classList.add('big'); });
+    document.addEventListener('mouseout', e => { if (e.target.closest('a,button,.pc,.fav')) c.classList.remove('big'); });
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+# Vedant Pawar — full profile
+
+> Product-minded software engineer. "I scope it, design it, build it, ship it and measure it." Based in Mumbai, India; open to relocating.
+
+- Website: https://vedant-builds.vercel.app/
+- Email: hello.vedantp@gmail.com
+- GitHub: https://github.com/codderv006
+- LinkedIn: https://www.linkedin.com/in/vedant-pawar/
+- Resume (PDF): https://drive.google.com/file/d/1L34E1v_LDiduGgZJyUZfnq7fH_mTsSgt/view?usp=drive_link
+- Design portfolio: https://vedantxdesign.my.canva.site/
+
+## Looking for
+
+In priority order:
+1. Product engineering
+2. Product management (APM / PM)
+3. Data & analytics
+4. Full-stack development
+5. Founder's Office
+
+Interested in: consumer products people return to, AI-native products, data-driven teams, deep tech and space.
+Best at: taking a fuzzy problem to a shipped, measured product with a small team.
+
+## Summary
+
+Computer engineer who works at the intersection of engineering and product. Hired as a developer at an early-stage US startup and grew into owning features end to end: requirements, UX, architecture, deployment and post-launch analytics, without a PM, designer or handoffs. When the company went through a rough patch and the team was let go, he was the one retained. Left a campus-placement job at Capgemini after 11 days to build at a startup.
+
+## Experience
+
+### Tekkers AI — Full-stack developer (de facto product owner)
+Aug 2025 – present · Houston, TX, USA (remote)
+- Owned 10+ features end to end across a consumer sports fan app and a B2B venue dashboard.
+- Live Predictions: score forecasting, live leaderboard and check-in gating, built from scratch; became the app's #1 user-acquisition driver within weeks.
+- Personalised For You feed: single-bootstrap + 30-second polling architecture tailored to each user's favourite teams; handled all iOS/Android edge cases solo.
+- Communications tab for venue operators: automated event reminders, friend-invite nudges, fill-the-spots campaigns.
+- Push notifications end to end: delivery pipeline, topic routing, read/unread logic, low-latency schema.
+- Product analytics in PostHog across 17 screens: funnels, cohorts, DAU/WAU; automated daily digests to the team.
+- Also owns UI/UX, graphics and product demos for 5–6 screens, including revenue-generating games.
+
+### Capgemini — Software engineer
+Jul 2025 – Aug 2025 · Navi Mumbai. Campus placement; left after 11 days to join a startup.
+
+### Unsquare — UI/UX intern
+May 2025 · Thane, Mumbai (on-site). Wireframes and high-fidelity Figma prototypes for mobile and web.
+
+### GrapheneAI — Data intern
+May 2024 – Jul 2024 · Bangalore (remote). AI pipeline testing, data cleaning and scraping, chatbot parameter testing.
+
+### Outlier AI — Language contributor
+May 2024 – Jul 2024 (remote). Wrote, ranked and edited prompts and responses to train AI models.
+
+### VESIT — Summer intern
+May 2024 – Jul 2024 · Mumbai. Co-built PictoNarrot, an app that helps children with special needs learn language through narrated stories.
+
+## Leadership & activities
+- CodeCell VESIT — Student Head (2024–2025): led designers, PR, tech and ambassadors; ran a 600+ participant hackathon and 1300+ attendee workshops; raised ₹1.3L cash + $1000 in kind; handled sponsors, MOUs, T&Cs and college approvals.
+- CSI VESIT — Operations.
+- NASA GLOBE Observer — Citizen scientist (Dec 2022 – present): visual and written cloud-condition reports.
+- VESIT Photo Circle — Photographer and editor (Aug 2022 – Jul 2023).
+
+## Projects
+
+Role codes: PE = product engineering, PM = product management, DATA = data & analytics, FS = full-stack, FO = Founder's Office.
+
+| Project | What it is | Proves | Stack | Link |
+|---|---|---|---|---|
+| Live Predictions (Tekkers) | Live score forecasts + leaderboard; #1 acquisition driver | PM, PE, FS, DATA | Full-stack, PostHog | production, private |
+| Push + reachouts engine (Tekkers) | Push notifications, reminders, nudges, campaigns | PE, PM, FS, FO | Backend | production, private |
+| Analytics, minus the analyst (Tekkers) | PostHog funnels, cohorts, DAU/WAU, daily digests | DATA, PM, FO | PostHog | production, private |
+| Personalised For You feed (Tekkers) | Per-user team feed, live polling | PE, FS | Mobile, backend | production, private |
+| Saathi (Bolna hackathon) | Voice guide that helps older parents use everyday apps step by step in English and Marathi; first flow books Ola/Uber/Rapido rides; never acts on the user's behalf | PM, PE, FS | Flutter, Bolna voice AI, Firebase, Node.js | not public yet |
+| Girega Ya Nahi | Predicts when a biscuit breaks in chai: 10-stage physics pipeline, 5,000-run Monte Carlo, Bayesian learning | PE, FS, DATA | Next.js, TypeScript, Gemini | https://github.com/codderv006/girega-ya-nahi · https://girega-ya-nahi-liart.vercel.app |
+| The Football Data Dilemma | Player analysis to build a profitable team — Datazen Datathon 1st place | DATA, PM | Python | https://github.com/codderv006/GFC-datathon |
+| Quick Fill | Book CNG station slots by live availability — DevIgnite Hackathon 1st place | PE, PM, FS | Flutter, Dart | https://github.com/codderv006/DevIgnite-24-Quick-Fill-GFC01 |
+| Janhit Mitra | AI grievance platform for citizens and authorities; 100+ user pilot, 40% faster submissions | PM, PE, FO | Flutter, Firebase, Botpress | https://github.com/VedantTgithub/mum · https://www.youtube.com/watch?v=1IosJY7mh8o |
+| LingoAI | Learn any language with an AI conversation partner | PE, PM | TypeScript, AI | https://youtu.be/8TLN_rZc90U |
+| Evolve Chargemates | Decentralised EV-charging network (two-sided marketplace); vision, MVP, GTM | PM, FO, PE | Flutter, Firebase, Maps | https://youtu.be/b2F9AFB2fgg |
+| Psychalyzer | Children's mental-wellbeing assessment (Smart India Hackathon) | PE, PM | Flutter, ML | https://github.com/codderv006/psychalyzer-001-SIH |
+| DSA Visualizer | Step-by-step data structure visualisations | FS | JavaScript | https://github.com/codderv006/DSA-VISUALIZER-TOOL |
+| Cover Letter Generator | AI cover letters via DeepSeek | FS, PE | React, AI | https://cover-letter-generator-deepseek.vercel.app |
+| Mirror | Self-help diary app | PE | Anvil, Python | https://mirror-self-help.anvil.app |
+| Sketchy | Draw in the air with hand tracking | PE | Python, OpenCV, MediaPipe | https://github.com/codderv006/sketchy |
+| Data Analysis Playground | Upload data, write Python, see results live | DATA, FS | Streamlit, Pandas | https://data-analysis-playground.streamlit.app |
+| NLP Visualizer | Learn NLP concepts visually | FS | JavaScript | https://nlpviz-qvao.onrender.com/ |
+| Feeldot | LLM chat app on open-source models | FS, PE | Python, LLM | https://github.com/codderv006/LLM-ChatBot |
+| Text to Handwriting | Typed text rendered as handwriting on A4 | PE | Python, Pillow | https://github.com/codderv006/Text-to-Handwriting-python |
+| FastAPI URL Shortener | Minimal link shortener | FS | Python, FastAPI | https://github.com/codderv006/URL-shortner-FAST-API |
+| Diabetes Predictor | ML diabetes-risk app | DATA | Python, ML | https://github.com/codderv006/Diabetes-Predictor-App |
+| Mobile Market Analysis, India | Power BI dashboard on Flipkart phone listings | DATA, PM | Power BI | https://drive.google.com/file/d/1fvwU3erGI_JJwvk6pQ4RTKt9oUqhwfRZ/view |
+| Mood-Based Movie Recommender | Recommendations from a Snowflake warehouse | DATA, FS | Snowflake, SQL, Streamlit | https://github.com/codderv006/movieRec-snowflake |
+| IBM HR Attrition Analysis | Tableau attrition dashboard | DATA, FO | Tableau | https://public.tableau.com/views/HRAnalyticsEmployeeAttritionPerformance_17494550482680/Dashboard1 |
+| Slango | Slang simplifier | — | C++ | https://github.com/codderv006/Slango-a-Slang-Simplifier |
+| Blender by Vedant | 3D art and renders | — | Blender | https://github.com/codderv006/Blender-by-vedant |
+
+## Skills
+- Languages: Python, JavaScript, TypeScript, Dart, Java, C, SQL
+- Build: React, Next.js, Node.js, Flutter, FastAPI, Anvil, Firebase, MongoDB
+- Data & AI: Pandas, NumPy, scikit-learn, TensorFlow, OpenCV, LLMs, Snowflake, Power BI, Tableau
+- Product & tools: PostHog, Figma, Blender, Git, Vercel
+
+## Education
+- B.E. Computer Engineering — V.E.S. Institute of Technology (VESIT), Mumbai, 2021–2025, CGPA 9.56
+- HSC (12th) — 98.87%, 2021
+- SSC (10th) — 94.20%, 2019
+
+## Awards
+- DevIgnite Hackathon — 1st place, SIGE Mumbai, Mar 2024
+- Datazen Datathon — 1st place, KJSCOE Mumbai, Feb 2024
+- J.P. Morgan Chase Code for Good — top 6 from VESIT, Jul 2024
+
+## Certifications
+NVIDIA DLI Fundamentals of Deep Learning (2023) · Google Cloud Computing Foundations (2023) · Introduction to Large Language Models (2023) · Data Analysis with Python, freeCodeCamp (2023) · Tata Data Visualisation job simulation, Forage (2023) · Cisco Networking Basics (2023) · Software Testing Bootcamp, Udemy (2023) · Python for Everybody (2024) · EDA with Seaborn (2024) · Intro to Machine Learning, Kaggle (2023) · Intro to R (2023)

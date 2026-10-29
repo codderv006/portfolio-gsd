@@ -1,0 +1,41 @@
+{
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/(NUE|Nue)/",
+      "destination": "/nue/"
+    },
+    {
+      "source": "/(DOTSTORE|Dotstore|DotStore)/",
+      "destination": "/dotstore/"
+    },
+    {
+      "source": "/(SMC|Smc)/",
+      "destination": "/smc/"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(llms.txt|llms-full.txt)",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/markdown; charset=utf-8"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "all"
+        }
+      ]
+    },
+    {
+      "source": "/(nue|dotstore|smc)/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
+    }
+  ]
+}
