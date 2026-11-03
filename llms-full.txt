@@ -68,7 +68,8 @@ Role codes: PE = product engineering, PM = product management, DATA = data & ana
 | Push + reachouts engine (Tekkers) | Push notifications, reminders, nudges, campaigns | PE, PM, FS, FO | Backend | production, private |
 | Analytics, minus the analyst (Tekkers) | PostHog funnels, cohorts, DAU/WAU, daily digests | DATA, PM, FO | PostHog | production, private |
 | Personalised For You feed (Tekkers) | Per-user team feed, live polling | PE, FS | Mobile, backend | production, private |
-| Saathi (Bolna hackathon) | Voice guide that helps older parents use everyday apps step by step in English and Marathi; first flow books Ola/Uber/Rapido rides; never acts on the user's behalf | PM, PE, FS | Flutter, Bolna voice AI, Firebase, Node.js | not public yet |
+| Saathi (Bolna hackathon) | Voice companion that helps parents use Ola, Uber, Rapido, Google Pay, PhonePe and WhatsApp in English or Marathi; the screen shows each step; never taps, pays or books for the user | PM, PE, FS | Flutter, Bolna voice AI, Firebase, Node.js | https://github.com/codderv006/saathi · https://youtu.be/dRGNC5Cv28k |
+| Prompter | Free teleprompter and camera recorder that sits under the lens; up to 4K; no install, account or uploads | PE, PM, FS | JavaScript, MediaRecorder, PWA | https://github.com/codderv006/teleprompter-for-all · https://teleprompter-for-all.vercel.app |
 | Girega Ya Nahi | Predicts when a biscuit breaks in chai: 10-stage physics pipeline, 5,000-run Monte Carlo, Bayesian learning | PE, FS, DATA | Next.js, TypeScript, Gemini | https://github.com/codderv006/girega-ya-nahi · https://girega-ya-nahi-liart.vercel.app |
 | The Football Data Dilemma | Player analysis to build a profitable team — Datazen Datathon 1st place | DATA, PM | Python | https://github.com/codderv006/GFC-datathon |
 | Quick Fill | Book CNG station slots by live availability — DevIgnite Hackathon 1st place | PE, PM, FS | Flutter, Dart | https://github.com/codderv006/DevIgnite-24-Quick-Fill-GFC01 |
